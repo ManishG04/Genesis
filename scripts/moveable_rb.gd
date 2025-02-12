@@ -12,12 +12,15 @@ var aimed: bool = false:
 func _on_aimed_updated(new: bool):
 	var mat = meshInstance.material_overlay as ShaderMaterial
 	if not mat: return
+	var tween = create_tween()
 	if new:
-		mat.set_shader_parameter("size", 1.1)
+		tween.tween_property(mat, "shader_parameter/size", 1.1, .25)
 	else:
-		mat.set_shader_parameter("size", 0)
+		tween.tween_property(mat, "shader_parameter/size", 1.0, .25)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	assert(meshInstance)
+	assert(meshInstance, "Mesh Instance not selected")
+	var mat = meshInstance.material_overlay as ShaderMaterial
+	assert(mat.get_shader_parameter("size"), "Size propery does not exist on the shader overlay")
 	

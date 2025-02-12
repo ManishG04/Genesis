@@ -24,7 +24,6 @@ var stamina := 100.0:
 @onready var camera: Camera3D = %Head/Camera3D
 @onready var stamina_bar: TextureProgressBar = %StaminaBar
 @onready var aim_ray_cast: RayCast3D = %AimRayCast
-@onready var grabber: Node = %Grabber
 
 
 var t_bob = 0.0
@@ -72,7 +71,6 @@ func _physics_process(delta: float) -> void:
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	move_and_slide()
 	_push_pushables(delta)
-	grabber.handle_grabber()
 	
 func _headbob(time: float) -> Vector3:
 	var pos = Vector3.ZERO

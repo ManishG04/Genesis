@@ -1,9 +1,12 @@
 class_name Grabber
-extends RayCast3D
+extends Node
+
+@export var enabled: bool = true
 
 @onready var camera: Node3D = %Head/Camera3D
 @onready var hand_sprite: Sprite3D = %HandSprite
-@onready var player: Player = $"../../.."
+@onready var player: Player = $"../.."
+@onready var aim_ray_cast: RayCast3D = %AimRayCast
 
 var grabbed_item: MoveableRB = null
 var grabbed_item_rel_pos: Vector3 = Vector3.ZERO
@@ -29,6 +32,7 @@ func _physics_process(delta: float):
 				previous_positions.pop_front()
 
 func handle_grabber():
+	if not enabled: return
 	if grabbed_item == null:
 		on_empty_grabber()
 		hand_sprite.frame = 0
@@ -37,7 +41,7 @@ func handle_grabber():
 		hand_sprite.frame = 1
 
 func on_empty_grabber():
-	var collision_object = get_collider() as MoveableRB
+	var collision_object = aim_ray_cast.get_collider() as MoveableRB
 	if collision_object != null:
 		on_grabber_collision(collision_object)
 		player.set_collision_mask_value(2, true)
