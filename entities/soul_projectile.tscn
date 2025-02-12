@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dou7ticx47c7m" path="res://assets/textures/T_VFX_basic1.PNG" id="4_8ps7n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n8naq"]
-radius = 0.75
+radius = 0.399682
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mqs62"]
 render_priority = 2
@@ -46,7 +46,7 @@ script = ExtResource("1_oqnag")
 shape = SubResource("SphereShape3D_n8naq")
 
 [node name="Visuals" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.25)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="firehead" parent="Visuals" instance=ExtResource("1_2yckr")]
 
