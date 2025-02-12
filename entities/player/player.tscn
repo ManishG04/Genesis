@@ -82,7 +82,7 @@ hframes = 2
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -5, 0)
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("6_gsapg")
 
 [node name="PlayerHUD" type="Control" parent="." node_paths=PackedStringArray("player")]
