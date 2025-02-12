@@ -3,9 +3,13 @@ extends Node
 
 enum ABILITIES {
 	GRAB,
-	SWAP
+	SWAP,
+	PROJECTILE_THROWER,
 }
 
+enum PROJECTILE_TYPES {
+	SOUL,
+}
 # This function sets a CollisionObject3D to a specific collision layer.
 # Note: In the editor the layers are 1-indexed (i.e. layer 1, layer 2, …)
 # but in code, the bit corresponding to layer 1 is the 0th bit.

@@ -37,6 +37,12 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/AudioSub/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://assets/fonts/C&C Red Alert [INET].ttf"
+theme/default_font_antialiasing=0
+theme/default_font_subpixel_positioning=0
+
 [input]
 
 up={
@@ -95,6 +101,8 @@ prev_weapon={
 3d_physics/layer_1="player"
 3d_physics/layer_2="aim-able"
 3d_physics/layer_3="walls"
+3d_physics/layer_4="aim-able-non-player"
+3d_physics/layer_5="projectiles"
 
 [rendering]
 

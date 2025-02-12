@@ -8,6 +8,7 @@ extends Node
 
 @onready var grabber: Grabber = $Grabber
 @onready var position_swapper: PositionSwapper = $PositionSwapper
+@onready var projectile_thrower: ProjectileThrower = $ProjectileThrower
 
 func _unhandled_input(event: InputEvent) -> void:
 	#if event is InputEventMouseButton and event.is_pressed():
@@ -28,3 +29,5 @@ func _physics_process(delta: float) -> void:
 			grabber.handle_ability()
 		Util.ABILITIES.SWAP:
 			position_swapper.handle_ability()
+		Util.ABILITIES.PROJECTILE_THROWER:
+			projectile_thrower.handle_ability()

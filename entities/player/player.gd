@@ -31,6 +31,7 @@ var t_bob = 0.0
 var speed = 0
 
 func _ready() -> void:
+	Global.player = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _unhandled_input(event: InputEvent) -> void:

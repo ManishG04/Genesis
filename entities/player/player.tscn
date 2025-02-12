@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dopuukxt8g7ej"]
+[gd_scene load_steps=23 format=3 uid="uid://dopuukxt8g7ej"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_5m0xc"]
 [ext_resource type="Script" path="res://entities/player/abilities.gd" id="2_b6kdo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://blhpk3ga2cfsy" path="res://assets/ui/energy_bar_over.png" id="4_2e0q3"]
 [ext_resource type="Texture2D" uid="uid://drcarhsr6b2bx" path="res://assets/ui/hand-sheet.png" id="4_cnvr1"]
 [ext_resource type="Script" path="res://entities/player/position_swapper.gd" id="4_im8co"]
+[ext_resource type="Script" path="res://entities/player/projectile_thrower.gd" id="5_13kd0"]
 [ext_resource type="Texture2D" uid="uid://duy12qmixa3ah" path="res://assets/ui/energy_bar_in.png" id="5_smxdj"]
 [ext_resource type="Script" path="res://entities/player/aim_ray_cast.gd" id="6_gsapg"]
 [ext_resource type="Texture2D" uid="uid://orclydn4tkd1" path="res://assets/ui/reticule.png" id="7_rgvwd"]
@@ -53,7 +54,7 @@ shape = SubResource("CapsuleShape3D_ler78")
 
 [node name="AbilitiesController" type="Node" parent="."]
 script = ExtResource("2_b6kdo")
-abilities = Array[int]([0, 1])
+abilities = Array[int]([2])
 selected_ability = 1
 
 [node name="Grabber" type="Node" parent="AbilitiesController"]
@@ -61,6 +62,9 @@ script = ExtResource("2_pidil")
 
 [node name="PositionSwapper" type="Node" parent="AbilitiesController"]
 script = ExtResource("4_im8co")
+
+[node name="ProjectileThrower" type="Node" parent="AbilitiesController"]
+script = ExtResource("5_13kd0")
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -100,16 +104,20 @@ player = NodePath("..")
 [node name="StaminaBar" type="TextureProgressBar" parent="PlayerHUD"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 61.0
+offset_left = 12.0
 offset_top = 10.0
-offset_right = 173.0
-offset_bottom = 50.0
+offset_right = 85.0
+offset_bottom = 26.0
 min_value = 10.0
-value = 100.0
+value = 76.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
 texture_under = ExtResource("3_xedsx")
 texture_over = ExtResource("4_2e0q3")
 texture_progress = ExtResource("5_smxdj")
-texture_progress_offset = Vector2(0, -1)
 
 [node name="Reticule" type="TextureRect" parent="PlayerHUD"]
 unique_name_in_owner = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b70na3pjo4ig2"]
+[gd_scene load_steps=15 format=3 uid="uid://b70na3pjo4ig2"]
 
 [ext_resource type="Texture2D" uid="uid://dt35ijkyfk7eh" path="res://icon.svg" id="1_btvt1"]
 [ext_resource type="PackedScene" uid="uid://dopuukxt8g7ej" path="res://entities/player/player.tscn" id="1_h8m8o"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://cfgtt6wpwipnk" path="res://resources/brick.tres" id="3_kibpi"]
 [ext_resource type="PackedScene" uid="uid://dpe0piw7vwtat" path="res://entities/crate.tscn" id="5_lq4bc"]
 [ext_resource type="PackedScene" uid="uid://br6qn750q6iho" path="res://entities/big_crate.tscn" id="6_013e2"]
+[ext_resource type="PackedScene" uid="uid://cewffst686tat" path="res://entities/soul_projectile.tscn" id="7_7e27n"]
 
 [sub_resource type="Curve" id="Curve_cyuty"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -115,59 +116,62 @@ use_collision = true
 collision_layer = 4
 size = Vector3(1, 3, 5)
 
+[node name="Crate" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
+
+[node name="Crate2" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
+
+[node name="Crate3" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 0)
+
+[node name="Crate4" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 0)
+
+[node name="Crate5" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 1)
+
+[node name="Crate6" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1)
+
+[node name="Crate7" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 1)
+
+[node name="Crate8" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 1)
+
+[node name="Crate9" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 2)
+
+[node name="Crate10" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 2)
+
+[node name="Crate11" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 2)
+
+[node name="Crate12" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 2)
+
+[node name="Crate13" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 3)
+
+[node name="Crate14" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3)
+
+[node name="Crate15" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3)
+
+[node name="Crate16" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 3)
+
+[node name="Crate17" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 6)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 8, 2, 0)
 pixel_size = 0.02
 billboard = 2
 texture = ExtResource("1_btvt1")
 
-[node name="Crate" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
-
-[node name="Crate2" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
-
-[node name="Crate3" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 0)
-
-[node name="Crate4" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 0)
-
-[node name="Crate5" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 1)
-
-[node name="Crate6" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1)
-
-[node name="Crate7" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 1)
-
-[node name="Crate8" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 1)
-
-[node name="Crate9" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 2)
-
-[node name="Crate10" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 2)
-
-[node name="Crate11" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 2)
-
-[node name="Crate12" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 2)
-
-[node name="Crate13" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 3)
-
-[node name="Crate14" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3)
-
-[node name="Crate15" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3)
-
-[node name="Crate16" parent="." instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 3)
-
-[node name="Crate17" parent="." instance=ExtResource("6_013e2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 6)
+[node name="SoulProjectile" parent="." instance=ExtResource("7_7e27n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 10)

@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://cewffst686tat"]
+
+[ext_resource type="PackedScene" uid="uid://dimaegc2kbmch" path="res://assets/models/firehead.blend" id="1_2yckr"]
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_oqnag"]
+[ext_resource type="Shader" uid="uid://txjg7byjd3k2" path="res://resources/soul_projectile.tres" id="2_18adh"]
+[ext_resource type="Shader" uid="uid://b2cbkfl8ab8jd" path="res://resources/soul_projectile_head.tres" id="3_cl6wc"]
+[ext_resource type="Texture2D" uid="uid://dou7ticx47c7m" path="res://assets/textures/T_VFX_basic1.PNG" id="4_8ps7n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n8naq"]
+radius = 0.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqs62"]
+render_priority = 2
+shader = ExtResource("2_18adh")
+shader_parameter/FireColor = Color(0, 0, 0, 1)
+shader_parameter/Speed = Vector2(0.5, -2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3520j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rnb5"]
+render_priority = 1
+shader = ExtResource("3_cl6wc")
+shader_parameter/Color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56dcn"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+albedo_color = Color(1, 0.940087, 0.89264, 1)
+albedo_texture = ExtResource("4_8ps7n")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gr5ig"]
+material = SubResource("StandardMaterial3D_56dcn")
+size = Vector2(0.1, 1)
+orientation = 0
+
+[node name="SoulProjectile" type="Area3D"]
+collision_layer = 16
+collision_mask = 6
+script = ExtResource("1_oqnag")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_n8naq")
+
+[node name="Visuals" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.25)
+
+[node name="firehead" parent="Visuals" instance=ExtResource("1_2yckr")]
+
+[node name="Sphere" parent="Visuals/firehead" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_mqs62")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1.33069, 0, 0, 0, 1.33069, 0, 0, 0, 1.33069, 0, 0, 0.380371)
+mesh = SubResource("SphereMesh_3520j")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_0rnb5")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Visuals"]
+amount = 10
+lifetime = 0.5
+explosiveness = 0.34
+mesh = SubResource("PlaneMesh_gr5ig")
+emission_shape = 1
+emission_sphere_radius = 0.5
+particle_flag_align_y = true
+direction = Vector3(0, 0, -1)
+spread = 24.32
+gravity = Vector3(0, -6.485, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+radial_accel_min = -10.0
+radial_accel_max = 5.0
+scale_amount_min = 0.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Visuals/firehead"]
