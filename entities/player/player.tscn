@@ -51,15 +51,16 @@ script = ExtResource("1_5m0xc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_ler78")
 
-[node name="Abilities" type="Node" parent="."]
+[node name="AbilitiesController" type="Node" parent="."]
 script = ExtResource("2_b6kdo")
+abilities = Array[int]([0, 1])
+selected_ability = 1
 
-[node name="Grabber" type="Node" parent="Abilities"]
+[node name="Grabber" type="Node" parent="AbilitiesController"]
 script = ExtResource("2_pidil")
 
-[node name="PositionSwapper" type="Node" parent="Abilities"]
+[node name="PositionSwapper" type="Node" parent="AbilitiesController"]
 script = ExtResource("4_im8co")
-enabled = false
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -82,7 +83,7 @@ hframes = 2
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -5, 0)
-collision_mask = 6
+collision_mask = 14
 script = ExtResource("6_gsapg")
 
 [node name="PlayerHUD" type="Control" parent="." node_paths=PackedStringArray("player")]

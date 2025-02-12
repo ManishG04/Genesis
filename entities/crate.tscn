@@ -12,7 +12,8 @@ uv1_offset = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 texture_filter = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xunhu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tl5kl"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_plm7l")
 shader_parameter/color = Color(1, 1, 1, 1)
@@ -22,7 +23,7 @@ shader_parameter/size = 1.0
 
 [node name="Crate" type="RigidBody3D" node_paths=PackedStringArray("meshInstance")]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 15
 can_sleep = false
 script = ExtResource("1_7cjhx")
 meshInstance = NodePath("MeshInstance3D")
@@ -32,5 +33,5 @@ shape = SubResource("BoxShape3D_msmjq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_e13q3")
-material_overlay = SubResource("ShaderMaterial_xunhu")
+material_overlay = SubResource("ShaderMaterial_tl5kl")
 mesh = SubResource("BoxMesh_3a4b4")

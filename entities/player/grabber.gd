@@ -31,12 +31,13 @@ func _physics_process(delta: float):
 			if previous_positions.size() > max_positions:
 				previous_positions.pop_front()
 
-func handle_grabber():
+func handle_ability():
 	if not enabled: return
 	if grabbed_item == null:
 		on_empty_grabber()
 		hand_sprite.frame = 0
 	else:
+		_on_grabbed(grabbed_item)
 		on_full_grabber()
 		hand_sprite.frame = 1
 
@@ -44,13 +45,13 @@ func on_empty_grabber():
 	var collision_object = aim_ray_cast.get_collider() as MoveableRB
 	if collision_object != null:
 		on_grabber_collision(collision_object)
-		player.set_collision_mask_value(2, true)
+		#collision_object.set_collision_layer_value(1, false)
 
 func on_full_grabber():
 	if grabbed_item == null:
 		return
 	grabbed_item.aimed = true
-	player.set_collision_mask_value(2, false)
+	#grabbed_item.set_collision_layer_value(1, true)
 	# Calculate expected position
 	var expected_translation = camera.to_global(grabbed_item_rel_pos)
 	
@@ -70,6 +71,7 @@ func on_full_grabber():
 		
 		# Add torque dampening to reduce spinning
 		grabbed_item.angular_velocity *= 0.95
+		grabbed_item.linear_velocity *= 0.9
 	
 	# Release the object when the button is released
 	if !Input.is_action_pressed("shoot"):
@@ -77,6 +79,7 @@ func on_full_grabber():
 
 func let_go():
 	grabbed_item.aimed = false
+	_on_let_go(grabbed_item)
 	if grabbed_item and previous_positions.size() >= 2:
 		# Calculate velocity from previous positions
 		var throw_velocity = Vector3.ZERO
@@ -94,6 +97,14 @@ func let_go():
 	# Clear the position history
 	previous_positions.clear()
 	grabbed_item = null
+	
+func _on_grabbed(obj: MoveableRB):
+	if not obj: return
+	Util.move_collision_object_to_layer(obj, 4)
+
+func _on_let_go(obj: MoveableRB):
+	if not obj: return
+	Util.move_collision_object_to_layer(obj, 2)
 
 func on_grabber_collision(collision_object: MoveableRB):
 	if can_be_picked(collision_object):

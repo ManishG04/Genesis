@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	if current_cooldown > 0:
 		current_cooldown -= delta
 
-func handle_swapper() -> void:
+func handle_ability() -> void:
 	if not enabled:
 		return
 		
