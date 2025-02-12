@@ -24,5 +24,4 @@ func shoot():
 	#projectile.global_position = owner.global_position
 	#projectile.global_rotation = camera.global_rotation
 	projectile.global_transform = camera.global_transform
-	print(owner.name)
 	get_tree().root.add_child(projectile)

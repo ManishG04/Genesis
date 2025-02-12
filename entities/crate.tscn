@@ -24,7 +24,6 @@ shader_parameter/size = 1.0
 [node name="Crate" type="RigidBody3D" node_paths=PackedStringArray("meshInstance")]
 collision_layer = 2
 collision_mask = 15
-can_sleep = false
 script = ExtResource("1_7cjhx")
 meshInstance = NodePath("MeshInstance3D")
 

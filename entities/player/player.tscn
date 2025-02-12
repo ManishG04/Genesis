@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://entities/player/aim_ray_cast.gd" id="6_gsapg"]
 [ext_resource type="Texture2D" uid="uid://orclydn4tkd1" path="res://assets/ui/reticule.png" id="7_rgvwd"]
 [ext_resource type="Texture2D" uid="uid://dq8l15a3pvc40" path="res://assets/ui/reticule_active.png" id="8_uv7fy"]
-[ext_resource type="Texture2D" uid="uid://b6mge48ksod8h" path="res://assets/ui/hand.png" id="9_ri0pw"]
+[ext_resource type="Texture2D" uid="uid://bv17rw2pa2k68" path="res://assets/ui/watch.png" id="11_ml7tb"]
 [ext_resource type="Shader" path="res://resources/speed.gdshader" id="14_v73gg"]
 [ext_resource type="Texture2D" uid="uid://72uxdlk8dls4" path="res://assets/ui/overlay.png" id="15_kj237"]
 [ext_resource type="Script" path="res://entities/player/speed_indicator.gd" id="16_e01ef"]
@@ -54,7 +54,7 @@ shape = SubResource("CapsuleShape3D_ler78")
 
 [node name="AbilitiesController" type="Node" parent="."]
 script = ExtResource("2_b6kdo")
-abilities = Array[int]([2])
+abilities = Array[int]([2, 0, 1])
 selected_ability = 1
 
 [node name="Grabber" type="Node" parent="AbilitiesController"]
@@ -101,24 +101,6 @@ mouse_filter = 2
 script = ExtResource("3_lgyin")
 player = NodePath("..")
 
-[node name="StaminaBar" type="TextureProgressBar" parent="PlayerHUD"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 12.0
-offset_top = 10.0
-offset_right = 85.0
-offset_bottom = 26.0
-min_value = 10.0
-value = 76.0
-nine_patch_stretch = true
-stretch_margin_left = 4
-stretch_margin_top = 4
-stretch_margin_right = 4
-stretch_margin_bottom = 4
-texture_under = ExtResource("3_xedsx")
-texture_over = ExtResource("4_2e0q3")
-texture_progress = ExtResource("5_smxdj")
-
 [node name="Reticule" type="TextureRect" parent="PlayerHUD"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -137,18 +119,15 @@ texture = SubResource("AnimatedTexture_7btg6")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="PlayerHUD"]
-visible = false
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -142.0
-offset_top = -142.0
-grow_horizontal = 0
+offset_top = -114.0
+offset_right = 87.0
 grow_vertical = 0
-texture = ExtResource("9_ri0pw")
+texture = ExtResource("11_ml7tb")
+stretch_mode = 3
 
 [node name="SpeedIndicator" type="TextureRect" parent="PlayerHUD"]
 unique_name_in_owner = true
@@ -162,3 +141,41 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("15_kj237")
 script = ExtResource("16_e01ef")
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerHUD"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerHUD/MarginContainer"]
+layout_mode = 2
+
+[node name="StaminaBar" type="TextureProgressBar" parent="PlayerHUD/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+min_value = 10.0
+value = 76.0
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = ExtResource("3_xedsx")
+texture_over = ExtResource("4_2e0q3")
+texture_progress = ExtResource("5_smxdj")
+
+[node name="VSeparator" type="Container" parent="PlayerHUD/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AbilityLabel" type="Label" parent="PlayerHUD/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "GRAB"

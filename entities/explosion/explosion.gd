@@ -23,6 +23,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is RigidBody3D:
-		print(body.name)
 		var normal = (body.global_position - global_position).normalized()
 		body.apply_central_impulse(force * normal)

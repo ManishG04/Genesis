@@ -46,7 +46,7 @@ adjustment_color_correction = SubResource("CurveXYZTexture_ov6lx")
 [node name="Proto" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -7, 0, 0)
 light_energy = 0.1
 shadow_enabled = true
 directional_shadow_mode = 0
@@ -116,58 +116,1360 @@ collision_layer = 4
 size = Vector3(1, 3, 5)
 
 [node name="Crate" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)
+sleeping = true
 
 [node name="Crate2" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, 0)
+sleeping = true
 
 [node name="Crate3" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, 0)
+sleeping = true
 
 [node name="Crate4" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, 0)
+sleeping = true
 
 [node name="Crate5" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 1)
+sleeping = true
 
 [node name="Crate6" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, 1)
+sleeping = true
 
 [node name="Crate7" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, 1)
+sleeping = true
 
 [node name="Crate8" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, 1)
+sleeping = true
 
 [node name="Crate9" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 2)
+sleeping = true
 
 [node name="Crate10" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, 2)
+sleeping = true
 
 [node name="Crate11" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, 2)
+sleeping = true
 
 [node name="Crate12" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, 2)
+sleeping = true
 
 [node name="Crate13" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 3)
+sleeping = true
 
 [node name="Crate14" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, 3)
+sleeping = true
 
 [node name="Crate15" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, 3)
+sleeping = true
 
 [node name="Crate16" parent="Env" instance=ExtResource("5_lq4bc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, 3)
+sleeping = true
+
+[node name="Crate18" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
+sleeping = true
+
+[node name="Crate19" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 0)
+sleeping = true
+
+[node name="Crate20" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, 0)
+sleeping = true
+
+[node name="Crate21" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, 0)
+sleeping = true
+
+[node name="Crate22" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 1)
+sleeping = true
+
+[node name="Crate23" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 1)
+sleeping = true
+
+[node name="Crate24" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, 1)
+sleeping = true
+
+[node name="Crate25" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, 1)
+sleeping = true
+
+[node name="Crate26" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 2)
+sleeping = true
+
+[node name="Crate27" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 2)
+sleeping = true
+
+[node name="Crate28" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, 2)
+sleeping = true
+
+[node name="Crate29" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, 2)
+sleeping = true
+
+[node name="Crate30" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 3)
+sleeping = true
+
+[node name="Crate31" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 3)
+sleeping = true
+
+[node name="Crate32" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, 3)
+sleeping = true
+
+[node name="Crate33" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, 3)
+sleeping = true
+
+[node name="Crate34" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+sleeping = true
+
+[node name="Crate35" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+sleeping = true
+
+[node name="Crate36" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, 0)
+sleeping = true
+
+[node name="Crate37" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 0)
+sleeping = true
+
+[node name="Crate38" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 1)
+sleeping = true
+
+[node name="Crate39" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 1)
+sleeping = true
+
+[node name="Crate40" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, 1)
+sleeping = true
+
+[node name="Crate41" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 1)
+sleeping = true
+
+[node name="Crate42" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 2)
+sleeping = true
+
+[node name="Crate43" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 2)
+sleeping = true
+
+[node name="Crate44" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, 2)
+sleeping = true
+
+[node name="Crate45" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 2)
+sleeping = true
+
+[node name="Crate46" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 3)
+sleeping = true
+
+[node name="Crate47" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 3)
+sleeping = true
+
+[node name="Crate48" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, 3)
+sleeping = true
+
+[node name="Crate49" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 3)
+sleeping = true
+
+[node name="Crate50" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+sleeping = true
+
+[node name="Crate51" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+sleeping = true
+
+[node name="Crate52" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+sleeping = true
+
+[node name="Crate53" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+sleeping = true
+
+[node name="Crate54" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+sleeping = true
+
+[node name="Crate55" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1)
+sleeping = true
+
+[node name="Crate56" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 1)
+sleeping = true
+
+[node name="Crate57" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 1)
+sleeping = true
+
+[node name="Crate58" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+sleeping = true
+
+[node name="Crate59" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 2)
+sleeping = true
+
+[node name="Crate60" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 2)
+sleeping = true
+
+[node name="Crate61" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 2)
+sleeping = true
+
+[node name="Crate62" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 3)
+sleeping = true
+
+[node name="Crate63" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3)
+sleeping = true
+
+[node name="Crate64" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 3)
+sleeping = true
+
+[node name="Crate65" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 3)
+sleeping = true
+
+[node name="Crate66" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+sleeping = true
+
+[node name="Crate67" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+sleeping = true
+
+[node name="Crate68" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, 0)
+sleeping = true
+
+[node name="Crate69" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, 0)
+sleeping = true
+
+[node name="Crate70" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 1)
+sleeping = true
+
+[node name="Crate71" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 1)
+sleeping = true
+
+[node name="Crate72" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, 1)
+sleeping = true
+
+[node name="Crate73" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, 1)
+sleeping = true
+
+[node name="Crate74" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 2)
+sleeping = true
+
+[node name="Crate75" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 2)
+sleeping = true
+
+[node name="Crate76" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, 2)
+sleeping = true
+
+[node name="Crate77" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, 2)
+sleeping = true
+
+[node name="Crate78" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 3)
+sleeping = true
+
+[node name="Crate79" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 3)
+sleeping = true
+
+[node name="Crate80" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, 3)
+sleeping = true
+
+[node name="Crate81" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, 3)
+sleeping = true
+
+[node name="Crate82" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -4)
+sleeping = true
+
+[node name="Crate83" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -4)
+sleeping = true
+
+[node name="Crate84" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, -4)
+sleeping = true
+
+[node name="Crate85" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, -4)
+sleeping = true
+
+[node name="Crate86" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -3)
+sleeping = true
+
+[node name="Crate87" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -3)
+sleeping = true
+
+[node name="Crate88" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, -3)
+sleeping = true
+
+[node name="Crate89" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, -3)
+sleeping = true
+
+[node name="Crate90" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -2)
+sleeping = true
+
+[node name="Crate91" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -2)
+sleeping = true
+
+[node name="Crate92" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, -2)
+sleeping = true
+
+[node name="Crate93" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, -2)
+sleeping = true
+
+[node name="Crate94" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -1)
+sleeping = true
+
+[node name="Crate95" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -1)
+sleeping = true
+
+[node name="Crate96" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.5, -1)
+sleeping = true
+
+[node name="Crate97" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, -1)
+sleeping = true
+
+[node name="Crate98" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -4)
+sleeping = true
+
+[node name="Crate99" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -4)
+sleeping = true
+
+[node name="Crate100" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -4)
+sleeping = true
+
+[node name="Crate101" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, -4)
+sleeping = true
+
+[node name="Crate102" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -3)
+sleeping = true
+
+[node name="Crate103" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -3)
+sleeping = true
+
+[node name="Crate104" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -3)
+sleeping = true
+
+[node name="Crate105" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, -3)
+sleeping = true
+
+[node name="Crate106" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -2)
+sleeping = true
+
+[node name="Crate107" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -2)
+sleeping = true
+
+[node name="Crate108" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -2)
+sleeping = true
+
+[node name="Crate109" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, -2)
+sleeping = true
+
+[node name="Crate110" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -1)
+sleeping = true
+
+[node name="Crate111" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -1)
+sleeping = true
+
+[node name="Crate112" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -1)
+sleeping = true
+
+[node name="Crate113" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.5, -1)
+sleeping = true
+
+[node name="Crate114" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -4)
+sleeping = true
+
+[node name="Crate115" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -4)
+sleeping = true
+
+[node name="Crate116" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, -4)
+sleeping = true
+
+[node name="Crate117" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, -4)
+sleeping = true
+
+[node name="Crate118" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -3)
+sleeping = true
+
+[node name="Crate119" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -3)
+sleeping = true
+
+[node name="Crate120" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, -3)
+sleeping = true
+
+[node name="Crate121" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, -3)
+sleeping = true
+
+[node name="Crate122" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -2)
+sleeping = true
+
+[node name="Crate123" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -2)
+sleeping = true
+
+[node name="Crate124" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, -2)
+sleeping = true
+
+[node name="Crate125" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, -2)
+sleeping = true
+
+[node name="Crate126" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -1)
+sleeping = true
+
+[node name="Crate127" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, -1)
+sleeping = true
+
+[node name="Crate128" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, -1)
+sleeping = true
+
+[node name="Crate129" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, -1)
+sleeping = true
+
+[node name="Crate130" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -4)
+sleeping = true
+
+[node name="Crate131" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4)
+sleeping = true
+
+[node name="Crate132" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+sleeping = true
+
+[node name="Crate133" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -4)
+sleeping = true
+
+[node name="Crate134" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3)
+sleeping = true
+
+[node name="Crate135" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -3)
+sleeping = true
+
+[node name="Crate136" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -3)
+sleeping = true
+
+[node name="Crate137" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -3)
+sleeping = true
+
+[node name="Crate138" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2)
+sleeping = true
+
+[node name="Crate139" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -2)
+sleeping = true
+
+[node name="Crate140" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -2)
+sleeping = true
+
+[node name="Crate141" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -2)
+sleeping = true
+
+[node name="Crate142" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
+sleeping = true
+
+[node name="Crate143" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1)
+sleeping = true
+
+[node name="Crate144" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -1)
+sleeping = true
+
+[node name="Crate145" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -1)
+sleeping = true
+
+[node name="Crate146" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -4)
+sleeping = true
+
+[node name="Crate147" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, -4)
+sleeping = true
+
+[node name="Crate148" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, -4)
+sleeping = true
+
+[node name="Crate149" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, -4)
+sleeping = true
+
+[node name="Crate150" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -3)
+sleeping = true
+
+[node name="Crate151" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, -3)
+sleeping = true
+
+[node name="Crate152" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, -3)
+sleeping = true
+
+[node name="Crate153" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, -3)
+sleeping = true
+
+[node name="Crate154" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -2)
+sleeping = true
+
+[node name="Crate155" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, -2)
+sleeping = true
+
+[node name="Crate156" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, -2)
+sleeping = true
+
+[node name="Crate157" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, -2)
+sleeping = true
+
+[node name="Crate158" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -1)
+sleeping = true
+
+[node name="Crate159" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, -1)
+sleeping = true
+
+[node name="Crate160" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, -1)
+sleeping = true
+
+[node name="Crate161" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, -1)
+sleeping = true
+
+[node name="Crate505" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, 0)
+sleeping = true
+
+[node name="Crate506" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 0)
+sleeping = true
+
+[node name="Crate507" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, 0)
+sleeping = true
+
+[node name="Crate508" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, 0)
+sleeping = true
+
+[node name="Crate509" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, 1)
+sleeping = true
+
+[node name="Crate510" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 1)
+sleeping = true
+
+[node name="Crate511" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, 1)
+sleeping = true
+
+[node name="Crate512" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, 1)
+sleeping = true
+
+[node name="Crate513" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, 2)
+sleeping = true
+
+[node name="Crate514" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 2)
+sleeping = true
+
+[node name="Crate515" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, 2)
+sleeping = true
+
+[node name="Crate516" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, 2)
+sleeping = true
+
+[node name="Crate517" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, 3)
+sleeping = true
+
+[node name="Crate518" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, 3)
+sleeping = true
+
+[node name="Crate519" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, 3)
+sleeping = true
+
+[node name="Crate520" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, 3)
+sleeping = true
+
+[node name="Crate521" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, 0)
+sleeping = true
+
+[node name="Crate522" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, 0)
+sleeping = true
+
+[node name="Crate523" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, 0)
+sleeping = true
+
+[node name="Crate524" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, 0)
+sleeping = true
+
+[node name="Crate525" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, 1)
+sleeping = true
+
+[node name="Crate526" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, 1)
+sleeping = true
+
+[node name="Crate527" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, 1)
+sleeping = true
+
+[node name="Crate528" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, 1)
+sleeping = true
+
+[node name="Crate529" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, 2)
+sleeping = true
+
+[node name="Crate530" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, 2)
+sleeping = true
+
+[node name="Crate531" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, 2)
+sleeping = true
+
+[node name="Crate532" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, 2)
+sleeping = true
+
+[node name="Crate533" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, 3)
+sleeping = true
+
+[node name="Crate534" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, 3)
+sleeping = true
+
+[node name="Crate535" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, 3)
+sleeping = true
+
+[node name="Crate536" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, 3)
+sleeping = true
+
+[node name="Crate537" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 0)
+sleeping = true
+
+[node name="Crate538" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 0)
+sleeping = true
+
+[node name="Crate539" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 0)
+sleeping = true
+
+[node name="Crate540" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, 0)
+sleeping = true
+
+[node name="Crate541" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 1)
+sleeping = true
+
+[node name="Crate542" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 1)
+sleeping = true
+
+[node name="Crate543" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 1)
+sleeping = true
+
+[node name="Crate544" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, 1)
+sleeping = true
+
+[node name="Crate545" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 2)
+sleeping = true
+
+[node name="Crate546" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 2)
+sleeping = true
+
+[node name="Crate547" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 2)
+sleeping = true
+
+[node name="Crate548" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, 2)
+sleeping = true
+
+[node name="Crate549" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 3)
+sleeping = true
+
+[node name="Crate550" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 3)
+sleeping = true
+
+[node name="Crate551" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 3)
+sleeping = true
+
+[node name="Crate552" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, 3)
+sleeping = true
+
+[node name="Crate553" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0)
+sleeping = true
+
+[node name="Crate554" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 0)
+sleeping = true
+
+[node name="Crate555" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 0)
+sleeping = true
+
+[node name="Crate556" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, 0)
+sleeping = true
+
+[node name="Crate557" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 1)
+sleeping = true
+
+[node name="Crate558" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 1)
+sleeping = true
+
+[node name="Crate559" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 1)
+sleeping = true
+
+[node name="Crate560" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, 1)
+sleeping = true
+
+[node name="Crate561" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 2)
+sleeping = true
+
+[node name="Crate562" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 2)
+sleeping = true
+
+[node name="Crate563" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 2)
+sleeping = true
+
+[node name="Crate564" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, 2)
+sleeping = true
+
+[node name="Crate565" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 3)
+sleeping = true
+
+[node name="Crate566" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 3)
+sleeping = true
+
+[node name="Crate567" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 3)
+sleeping = true
+
+[node name="Crate568" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, 3)
+sleeping = true
+
+[node name="Crate569" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
+sleeping = true
+
+[node name="Crate570" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0)
+sleeping = true
+
+[node name="Crate571" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, 0)
+sleeping = true
+
+[node name="Crate572" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, 0)
+sleeping = true
+
+[node name="Crate573" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 1)
+sleeping = true
+
+[node name="Crate574" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 1)
+sleeping = true
+
+[node name="Crate575" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, 1)
+sleeping = true
+
+[node name="Crate576" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, 1)
+sleeping = true
+
+[node name="Crate577" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 2)
+sleeping = true
+
+[node name="Crate578" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 2)
+sleeping = true
+
+[node name="Crate579" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, 2)
+sleeping = true
+
+[node name="Crate580" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, 2)
+sleeping = true
+
+[node name="Crate581" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 3)
+sleeping = true
+
+[node name="Crate582" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 3)
+sleeping = true
+
+[node name="Crate583" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, 3)
+sleeping = true
+
+[node name="Crate584" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, 3)
+sleeping = true
+
+[node name="Crate585" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, -4)
+sleeping = true
+
+[node name="Crate586" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -4)
+sleeping = true
+
+[node name="Crate587" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, -4)
+sleeping = true
+
+[node name="Crate588" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, -4)
+sleeping = true
+
+[node name="Crate589" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, -3)
+sleeping = true
+
+[node name="Crate590" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -3)
+sleeping = true
+
+[node name="Crate591" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, -3)
+sleeping = true
+
+[node name="Crate592" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, -3)
+sleeping = true
+
+[node name="Crate593" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, -2)
+sleeping = true
+
+[node name="Crate594" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -2)
+sleeping = true
+
+[node name="Crate595" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, -2)
+sleeping = true
+
+[node name="Crate596" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, -2)
+sleeping = true
+
+[node name="Crate597" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, -1)
+sleeping = true
+
+[node name="Crate598" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -1)
+sleeping = true
+
+[node name="Crate599" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.5, -1)
+sleeping = true
+
+[node name="Crate600" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5, -1)
+sleeping = true
+
+[node name="Crate601" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -4)
+sleeping = true
+
+[node name="Crate602" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, -4)
+sleeping = true
+
+[node name="Crate603" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -4)
+sleeping = true
+
+[node name="Crate604" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, -4)
+sleeping = true
+
+[node name="Crate605" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -3)
+sleeping = true
+
+[node name="Crate606" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, -3)
+sleeping = true
+
+[node name="Crate607" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -3)
+sleeping = true
+
+[node name="Crate608" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, -3)
+sleeping = true
+
+[node name="Crate609" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -2)
+sleeping = true
+
+[node name="Crate610" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, -2)
+sleeping = true
+
+[node name="Crate611" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -2)
+sleeping = true
+
+[node name="Crate612" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, -2)
+sleeping = true
+
+[node name="Crate613" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -1)
+sleeping = true
+
+[node name="Crate614" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, -1)
+sleeping = true
+
+[node name="Crate615" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -1)
+sleeping = true
+
+[node name="Crate616" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3.5, -1)
+sleeping = true
+
+[node name="Crate617" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -4)
+sleeping = true
+
+[node name="Crate618" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, -4)
+sleeping = true
+
+[node name="Crate619" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -4)
+sleeping = true
+
+[node name="Crate620" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, -4)
+sleeping = true
+
+[node name="Crate621" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -3)
+sleeping = true
+
+[node name="Crate622" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, -3)
+sleeping = true
+
+[node name="Crate623" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -3)
+sleeping = true
+
+[node name="Crate624" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, -3)
+sleeping = true
+
+[node name="Crate625" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -2)
+sleeping = true
+
+[node name="Crate626" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, -2)
+sleeping = true
+
+[node name="Crate627" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -2)
+sleeping = true
+
+[node name="Crate628" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, -2)
+sleeping = true
+
+[node name="Crate629" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -1)
+sleeping = true
+
+[node name="Crate630" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, -1)
+sleeping = true
+
+[node name="Crate631" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -1)
+sleeping = true
+
+[node name="Crate632" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, -1)
+sleeping = true
+
+[node name="Crate633" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -4)
+sleeping = true
+
+[node name="Crate634" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -4)
+sleeping = true
+
+[node name="Crate635" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -4)
+sleeping = true
+
+[node name="Crate636" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, -4)
+sleeping = true
+
+[node name="Crate637" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -3)
+sleeping = true
+
+[node name="Crate638" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -3)
+sleeping = true
+
+[node name="Crate639" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -3)
+sleeping = true
+
+[node name="Crate640" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, -3)
+sleeping = true
+
+[node name="Crate641" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -2)
+sleeping = true
+
+[node name="Crate642" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -2)
+sleeping = true
+
+[node name="Crate643" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -2)
+sleeping = true
+
+[node name="Crate644" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, -2)
+sleeping = true
+
+[node name="Crate645" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -1)
+sleeping = true
+
+[node name="Crate646" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -1)
+sleeping = true
+
+[node name="Crate647" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -1)
+sleeping = true
+
+[node name="Crate648" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.5, -1)
+sleeping = true
+
+[node name="Crate649" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -4)
+sleeping = true
+
+[node name="Crate650" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -4)
+sleeping = true
+
+[node name="Crate651" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, -4)
+sleeping = true
+
+[node name="Crate652" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -4)
+sleeping = true
+
+[node name="Crate653" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -3)
+sleeping = true
+
+[node name="Crate654" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -3)
+sleeping = true
+
+[node name="Crate655" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, -3)
+sleeping = true
+
+[node name="Crate656" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -3)
+sleeping = true
+
+[node name="Crate657" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -2)
+sleeping = true
+
+[node name="Crate658" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -2)
+sleeping = true
+
+[node name="Crate659" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, -2)
+sleeping = true
+
+[node name="Crate660" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -2)
+sleeping = true
+
+[node name="Crate661" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -1)
+sleeping = true
+
+[node name="Crate662" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -1)
+sleeping = true
+
+[node name="Crate663" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, -1)
+sleeping = true
+
+[node name="Crate664" parent="Env" instance=ExtResource("5_lq4bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -1)
+sleeping = true
 
 [node name="Crate17" parent="Env" instance=ExtResource("6_013e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 6)
 
+[node name="Crate162" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 8)
+
+[node name="Crate163" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 10)
+
+[node name="Crate164" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 12)
+
+[node name="Crate165" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 6)
+
+[node name="Crate166" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 8)
+
+[node name="Crate167" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 10)
+
+[node name="Crate168" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 12)
+
+[node name="Crate193" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 6)
+
+[node name="Crate194" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 8)
+
+[node name="Crate195" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 10)
+
+[node name="Crate196" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 12)
+
+[node name="Crate197" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, 6)
+
+[node name="Crate198" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, 8)
+
+[node name="Crate199" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, 10)
+
+[node name="Crate200" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, 12)
+
+[node name="Crate225" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 9, 6)
+
+[node name="Crate226" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 9, 8)
+
+[node name="Crate227" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 9, 10)
+
+[node name="Crate228" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 9, 12)
+
+[node name="Crate229" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11, 6)
+
+[node name="Crate230" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11, 8)
+
+[node name="Crate231" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11, 10)
+
+[node name="Crate232" parent="Env" instance=ExtResource("6_013e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 11, 12)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 8, 2, 0)
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 8, 0.5, 0)
+visible = false
 pixel_size = 0.02
 billboard = 2
 texture = ExtResource("1_btvt1")
