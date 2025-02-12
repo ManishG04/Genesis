@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpe0piw7vwtat"]
+
+[ext_resource type="Script" path="res://scripts/moveable_rb.gd" id="1_7cjhx"]
+[ext_resource type="Texture2D" uid="uid://d1fni02soxmux" path="res://assets/textures/crate.png" id="1_hywaf"]
+[ext_resource type="Shader" path="res://resources/outline.gdshader" id="3_plm7l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_msmjq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e13q3"]
+albedo_texture = ExtResource("1_hywaf")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xunhu"]
+render_priority = 0
+shader = ExtResource("3_plm7l")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/size = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_3a4b4"]
+
+[node name="Crate" type="RigidBody3D" node_paths=PackedStringArray("meshInstance")]
+collision_layer = 2
+collision_mask = 7
+can_sleep = false
+script = ExtResource("1_7cjhx")
+meshInstance = NodePath("MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_msmjq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_e13q3")
+material_overlay = SubResource("ShaderMaterial_xunhu")
+mesh = SubResource("BoxMesh_3a4b4")
