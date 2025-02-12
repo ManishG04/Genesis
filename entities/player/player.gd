@@ -24,6 +24,7 @@ var stamina := 100.0:
 @onready var camera: Camera3D = %Head/Camera3D
 @onready var stamina_bar: TextureProgressBar = %StaminaBar
 @onready var aim_ray_cast: RayCast3D = %AimRayCast
+@onready var speed_indicator: SpeedIndicator = %SpeedIndicator
 
 
 var t_bob = 0.0
@@ -69,6 +70,10 @@ func _physics_process(delta: float) -> void:
 	var velocity_clamped = clamp(Vector2(velocity.x, velocity.z).length(), 0.5, SPRINT_SPEED * 2)
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
+	if speed >= SPRINT_SPEED:
+		speed_indicator.speed_up()
+	else:
+		speed_indicator.slow_down()
 	move_and_slide()
 	_push_pushables(delta)
 	

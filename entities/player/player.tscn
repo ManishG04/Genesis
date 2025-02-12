@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dopuukxt8g7ej"]
+[gd_scene load_steps=22 format=3 uid="uid://dopuukxt8g7ej"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_5m0xc"]
 [ext_resource type="Script" path="res://entities/player/abilities.gd" id="2_b6kdo"]
@@ -9,9 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://drcarhsr6b2bx" path="res://assets/ui/hand-sheet.png" id="4_cnvr1"]
 [ext_resource type="Script" path="res://entities/player/position_swapper.gd" id="4_im8co"]
 [ext_resource type="Texture2D" uid="uid://duy12qmixa3ah" path="res://assets/ui/energy_bar_in.png" id="5_smxdj"]
+[ext_resource type="Script" path="res://entities/player/aim_ray_cast.gd" id="6_gsapg"]
 [ext_resource type="Texture2D" uid="uid://orclydn4tkd1" path="res://assets/ui/reticule.png" id="7_rgvwd"]
 [ext_resource type="Texture2D" uid="uid://dq8l15a3pvc40" path="res://assets/ui/reticule_active.png" id="8_uv7fy"]
 [ext_resource type="Texture2D" uid="uid://b6mge48ksod8h" path="res://assets/ui/hand.png" id="9_ri0pw"]
+[ext_resource type="Shader" path="res://resources/speed.gdshader" id="14_v73gg"]
+[ext_resource type="Texture2D" uid="uid://72uxdlk8dls4" path="res://assets/ui/overlay.png" id="15_kj237"]
+[ext_resource type="Script" path="res://entities/player/speed_indicator.gd" id="16_e01ef"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ler78"]
 height = 1.5
@@ -22,6 +26,22 @@ speed_scale = 0.0
 frame_0/texture = ExtResource("7_rgvwd")
 frame_1/texture = ExtResource("8_uv7fy")
 frame_1/duration = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b0wo2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_te38g"]
+noise = SubResource("FastNoiseLite_b0wo2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxixa"]
+shader = ExtResource("14_v73gg")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/sample_radius = 0.5
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/center_radius = 0.5
+shader_parameter/hole_smoothness = 0.4
+shader_parameter/hole_radius = 0.34
+shader_parameter/transparency = 1.0
+shader_parameter/noise = SubResource("NoiseTexture2D_te38g")
 
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 7
@@ -39,6 +59,7 @@ script = ExtResource("2_pidil")
 
 [node name="PositionSwapper" type="Node" parent="Abilities"]
 script = ExtResource("4_im8co")
+enabled = false
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -62,6 +83,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -5, 0)
 collision_mask = 2
+script = ExtResource("6_gsapg")
 
 [node name="PlayerHUD" type="Control" parent="." node_paths=PackedStringArray("player")]
 layout_mode = 3
@@ -118,3 +140,16 @@ offset_top = -142.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("9_ri0pw")
+
+[node name="SpeedIndicator" type="TextureRect" parent="PlayerHUD"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jxixa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("15_kj237")
+script = ExtResource("16_e01ef")

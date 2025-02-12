@@ -6,7 +6,6 @@ extends Node
 @onready var player: Player = $"../.."
 @onready var aim_ray_cast: RayCast3D = %AimRayCast
 
-# Visual indicator sprite (optional)
 @onready var swap_sprite: Sprite3D = %HandSprite
 
 # Properties
