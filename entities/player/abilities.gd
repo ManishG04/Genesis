@@ -14,10 +14,14 @@ extends Node
 					ability_label.text = "SWAP"
 				Util.ABILITIES.PROJECTILE_THROWER:
 					ability_label.text = "PROJECTILE"
+				Util.ABILITIES.TIME_STOPPER:
+					ability_label.text = "TIME STOP"
 
 @onready var grabber: Grabber = $Grabber
 @onready var position_swapper: PositionSwapper = $PositionSwapper
 @onready var projectile_thrower: ProjectileThrower = $ProjectileThrower
+@onready var time_stopper: TimeStopper = $TimeStopper
+
 @onready var ability_label: Label = %AbilityLabel
 @onready var ability_indicator: AbilityIndicator = %AbilityIndicator
 
@@ -41,3 +45,5 @@ func _physics_process(delta: float) -> void:
 			position_swapper.handle_ability()
 		Util.ABILITIES.PROJECTILE_THROWER:
 			projectile_thrower.handle_ability()
+		Util.ABILITIES.TIME_STOPPER:
+			time_stopper.handle_ability()

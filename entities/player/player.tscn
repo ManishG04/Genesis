@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dopuukxt8g7ej"]
+[gd_scene load_steps=38 format=3 uid="uid://dopuukxt8g7ej"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_5m0xc"]
 [ext_resource type="Script" path="res://entities/player/abilities.gd" id="2_b6kdo"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://entities/player/projectile_thrower.gd" id="5_13kd0"]
 [ext_resource type="Texture2D" uid="uid://duy12qmixa3ah" path="res://assets/ui/energy_bar_in.png" id="5_smxdj"]
 [ext_resource type="Script" path="res://entities/player/aim_ray_cast.gd" id="6_gsapg"]
+[ext_resource type="Script" path="res://entities/player/time_stopper.gd" id="6_p3yj5"]
 [ext_resource type="Texture2D" uid="uid://orclydn4tkd1" path="res://assets/ui/reticule.png" id="7_rgvwd"]
 [ext_resource type="Texture2D" uid="uid://dq8l15a3pvc40" path="res://assets/ui/reticule_active.png" id="8_uv7fy"]
 [ext_resource type="Texture2D" uid="uid://bv17rw2pa2k68" path="res://assets/ui/watch.png" id="11_ml7tb"]
@@ -124,6 +125,7 @@ shader_parameter/transparency = 1.0
 shader_parameter/noise = SubResource("NoiseTexture2D_te38g")
 
 [node name="Player" type="CharacterBody3D"]
+process_mode = 3
 collision_mask = 7
 script = ExtResource("1_5m0xc")
 
@@ -143,7 +145,7 @@ shape = SubResource("CapsuleShape3D_ler78")
 
 [node name="AbilitiesController" type="Node" parent="."]
 script = ExtResource("2_b6kdo")
-abilities = Array[int]([2, 0, 1])
+abilities = Array[int]([0, 1, 2, 3])
 selected_ability = 1
 
 [node name="Grabber" type="Node" parent="AbilitiesController"]
@@ -154,6 +156,9 @@ script = ExtResource("4_im8co")
 
 [node name="ProjectileThrower" type="Node" parent="AbilitiesController"]
 script = ExtResource("5_13kd0")
+
+[node name="TimeStopper" type="Node" parent="AbilitiesController"]
+script = ExtResource("6_p3yj5")
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -207,50 +212,11 @@ grow_vertical = 2
 texture = SubResource("AnimatedTexture_7btg6")
 stretch_mode = 3
 
-[node name="AbilityIndicator" type="TextureRect" parent="PlayerHUD"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 23.0
-offset_top = -108.0
-offset_right = 87.0
-offset_bottom = -20.0
-grow_vertical = 0
-texture = SubResource("AtlasTexture_7j0pw")
-stretch_mode = 3
-script = ExtResource("12_agwn0")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="PlayerHUD/AbilityIndicator"]
-visible = false
-show_behind_parent = true
-material = SubResource("CanvasItemMaterial_7spm1")
-position = Vector2(32, 56)
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_xp1hp")
-texture = SubResource("GradientTexture2D_tayeq")
-lifetime = 5.0
-
-[node name="SpeedIndicator" type="TextureRect" parent="PlayerHUD"]
-unique_name_in_owner = true
-visible = false
-material = SubResource("ShaderMaterial_jxixa")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("15_kj237")
-script = ExtResource("16_e01ef")
-
 [node name="MarginContainer" type="MarginContainer" parent="PlayerHUD"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 16.0
+offset_bottom = 22.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
@@ -278,8 +244,60 @@ texture_progress = ExtResource("5_smxdj")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="AbilityLabel" type="Label" parent="PlayerHUD/MarginContainer/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="PlayerHUD"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerHUD/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="AbilityIndicator" type="TextureRect" parent="PlayerHUD/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_7j0pw")
+stretch_mode = 3
+script = ExtResource("12_agwn0")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="PlayerHUD/MarginContainer2/VBoxContainer/AbilityIndicator"]
+visible = false
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_7spm1")
+position = Vector2(32, 56)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_xp1hp")
+texture = SubResource("GradientTexture2D_tayeq")
+lifetime = 5.0
+
+[node name="AbilityLabel" type="Label" parent="PlayerHUD/MarginContainer2/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "GRAB"
+horizontal_alignment = 1
+
+[node name="SpeedIndicator" type="TextureRect" parent="PlayerHUD"]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_jxixa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("15_kj237")
+script = ExtResource("16_e01ef")

@@ -27,8 +27,9 @@ var stamina := 100.0:
 @onready var speed_indicator: SpeedIndicator = %SpeedIndicator
 
 
-var t_bob = 0.0
-var speed = 0
+var t_bob := 0.0
+var speed := 0.0
+var time_factor := 1.0
 
 func _ready() -> void:
 	Global.player = self
@@ -41,10 +42,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 	
 func _physics_process(delta: float) -> void:
+	time_factor = 1/Engine.time_scale
+	delta *= time_factor
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * time_factor
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY * time_factor
 	if Input.is_action_pressed("sprint"):
 		stamina -= STAMINA_DELTA
 		speed = SPRINT_SPEED
@@ -53,6 +56,7 @@ func _physics_process(delta: float) -> void:
 		speed = WALK_SPEED
 	if stamina <= 0:
 		speed = WALK_SPEED
+	speed = speed * time_factor
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
@@ -66,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 	# Head bob
-	t_bob += delta * velocity.length() * float(is_on_floor()) + .025
+	t_bob += delta/time_factor * velocity.length() * float(is_on_floor()) + .025
 	camera.transform.origin = _headbob(t_bob)
 	var velocity_clamped = clamp(Vector2(velocity.x, velocity.z).length(), 0.5, SPRINT_SPEED * 2)
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
@@ -85,6 +89,7 @@ func _headbob(time: float) -> Vector3:
 	return pos
 
 func _push_pushables(delta: float) -> void:
+	if get_tree().paused: return
 	var col := get_last_slide_collision()
 
 	if col:
