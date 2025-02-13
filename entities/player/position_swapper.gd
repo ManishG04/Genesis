@@ -6,7 +6,7 @@ extends Node
 @onready var player: Player = $"../.."
 @onready var aim_ray_cast: RayCast3D = %AimRayCast
 
-@onready var swap_sprite: Sprite3D = %HandSprite
+@onready var hand_sprite: Sprite3D = %HandSprite
 
 # Properties
 var can_swap: bool = true
@@ -16,8 +16,8 @@ var current_cooldown: float = 0.0
 
 func _ready() -> void:
 	assert(player)
-	if swap_sprite:
-		swap_sprite.frame = 0
+	if hand_sprite:
+		hand_sprite.frame = 0
 
 func _physics_process(delta: float) -> void:
 	if not enabled:
@@ -32,11 +32,11 @@ func handle_ability() -> void:
 		
 	if current_cooldown <= 0:
 		on_ready_to_swap()
-		if swap_sprite:
-			swap_sprite.frame = 0
+		if hand_sprite:
+			hand_sprite.frame = 0
 	else:
-		if swap_sprite:
-			swap_sprite.frame = 1
+		if hand_sprite:
+			hand_sprite.frame = 1
 
 func on_ready_to_swap() -> void:
 	var collision_object = aim_ray_cast.get_collider() as MoveableRB
