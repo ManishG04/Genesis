@@ -29,11 +29,14 @@ func _ready() -> void:
 	selected_ability %= len(abilities)
 	ability_indicator.disable()
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("next_weapon"):
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("next_weapon"):
 		selected_ability += 1
-	if Input.is_action_just_pressed("prev_weapon"):
+	if event.is_action_pressed("prev_weapon"):
 		selected_ability -= 1
+	for i in 5:
+		if event.is_action_pressed("ability_%s" % (i + 1)):
+			selected_ability = i
 
 func _physics_process(delta: float) -> void:
 	if len(abilities) <= 0:
