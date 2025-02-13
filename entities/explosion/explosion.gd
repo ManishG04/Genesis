@@ -2,7 +2,7 @@ class_name Explosion
 extends Area3D
 
 @export var radius: float = 10.0
-@export var force: float = 50.0
+@export var force: float = 25.0
 @export var expansion_speed: float = 50.0
 @onready var col: CollisionShape3D = $CollisionShape3D
 @onready var explosion: GPUParticles3D = $Explosion

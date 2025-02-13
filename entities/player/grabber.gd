@@ -10,7 +10,7 @@ extends Node
 
 var grabbed_item: MoveableRB = null
 var grabbed_item_rel_pos: Vector3 = Vector3.ZERO
-var grab_strength: float = 80.0
+var grab_strength: float = 50.0
 var max_grab_distance: float = 6.0
 
 # New variables for throw mechanics
