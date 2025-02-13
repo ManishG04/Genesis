@@ -3,8 +3,9 @@ extends Node
 @export var abilities: Array[Util.ABILITIES] = []
 @export var selected_ability: int = 0:
 	set(new):
-		print(new)
 		selected_ability = new % len(abilities)
+		if ability_indicator:
+			ability_indicator.select_ability(abilities[selected_ability])
 		if ability_label:
 			match abilities[selected_ability]:
 				Util.ABILITIES.GRAB:
@@ -18,9 +19,11 @@ extends Node
 @onready var position_swapper: PositionSwapper = $PositionSwapper
 @onready var projectile_thrower: ProjectileThrower = $ProjectileThrower
 @onready var ability_label: Label = %AbilityLabel
+@onready var ability_indicator: AbilityIndicator = %AbilityIndicator
 
 func _ready() -> void:
 	selected_ability %= len(abilities)
+	ability_indicator.disable()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("next_weapon"):
