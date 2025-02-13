@@ -47,7 +47,8 @@ adjustment_color_correction = SubResource("CurveXYZTexture_ov6lx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -7, 0, 0)
-light_energy = 0.1
+visible = false
+light_color = Color(0.693888, 0.0328684, 0.0182392, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
 sky_mode = 1

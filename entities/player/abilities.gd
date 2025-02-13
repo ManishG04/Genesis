@@ -6,6 +6,9 @@ extends Node
 		selected_ability = new % len(abilities)
 		if ability_indicator:
 			ability_indicator.select_ability(abilities[selected_ability])
+#		Reset time scale
+		if abilities[selected_ability] != Util.ABILITIES.TIME_STOPPER:
+			Engine.time_scale = 1.0
 		if ability_label:
 			match abilities[selected_ability]:
 				Util.ABILITIES.GRAB:
