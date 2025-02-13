@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://dsjm6u2ixagqh"]
+
+[ext_resource type="PackedScene" uid="uid://cqsfcg0ha2a58" path="res://assets/models/door_frame.blend" id="1_dfrlj"]
+[ext_resource type="Script" path="res://entities/door/door.gd" id="1_pox70"]
+[ext_resource type="Script" path="res://scripts/interactable_area.gd" id="3_l4ca8"]
+[ext_resource type="Material" uid="uid://d2nvox60tr3q3" path="res://resources/black_iron.tres" id="3_njpsh"]
+[ext_resource type="Material" uid="uid://dwntmnjbf8rwb" path="res://resources/iron.tres" id="3_uuunc"]
+[ext_resource type="Material" uid="uid://rfidhutxy634" path="res://resources/dark_tile.tres" id="5_warfb"]
+
+[sub_resource type="Animation" id="Animation_6kv7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_frame/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h75x8"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_frame/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.63654, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5wokd"]
+_data = {
+"RESET": SubResource("Animation_6kv7g"),
+"open": SubResource("Animation_h75x8")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgkfy"]
+size = Vector3(2, 2.5, 2)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_pox70")
+
+[node name="door_frame" parent="." instance=ExtResource("1_dfrlj")]
+unique_name_in_owner = true
+
+[node name="Frame" parent="door_frame" index="0"]
+material_override = ExtResource("3_njpsh")
+
+[node name="Door" parent="door_frame" index="1"]
+surface_material_override/0 = ExtResource("3_uuunc")
+
+[node name="Platform" parent="door_frame" index="2"]
+material_override = ExtResource("5_warfb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5wokd")
+}
+
+[node name="InteractableArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+script = ExtResource("3_l4ca8")
+
+[node name="TooltipLabel" type="Label3D" parent="InteractableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+texture_filter = 2
+text = "E"
+font_size = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_kgkfy")
+
+[connection signal="body_entered" from="InteractableArea" to="InteractableArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractableArea" to="InteractableArea" method="_on_body_exited"]
+[connection signal="interacted" from="InteractableArea" to="." method="_on_interactable_area_interacted"]
+
+[editable path="door_frame"]

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://rfidhutxy634"]
+
+[ext_resource type="Texture2D" uid="uid://d2igsu216ggcb" path="res://assets/textures/dark_tile.png" id="1_7ahoa"]
+
+[resource]
+albedo_texture = ExtResource("1_7ahoa")
+roughness = 0.6
+ao_texture_channel = 2
+uv1_triplanar = true
+texture_filter = 0

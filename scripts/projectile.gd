@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	position += -transform.basis.z * speed * delta
 
 func _on_body_entered(body: Node3D) -> void:
+	print(body.name)
 	die()
 
 func die():

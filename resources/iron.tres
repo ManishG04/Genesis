@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dwntmnjbf8rwb"]
+
+[ext_resource type="Texture2D" uid="uid://cbfjbbeij2t06" path="res://assets/textures/iron.png" id="1_a3ub0"]
+
+[resource]
+albedo_texture = ExtResource("1_a3ub0")
+roughness = 0.0
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+uv1_triplanar = true
+texture_filter = 0

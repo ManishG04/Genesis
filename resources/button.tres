@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bxwt35qn5i6ol"]
+
+[ext_resource type="Texture2D" uid="uid://dc724ocnnajh2" path="res://assets/textures/button.png" id="1_6p4ab"]
+
+[resource]
+albedo_texture = ExtResource("1_6p4ab")
+uv1_triplanar = true
+texture_filter = 0
