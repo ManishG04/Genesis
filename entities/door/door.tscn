@@ -95,8 +95,6 @@ texture_filter = 2
 text = "1.0s"
 font_size = 64
 
-[connection signal="body_entered" from="InteractableArea" to="InteractableArea" method="_on_body_entered"]
-[connection signal="body_exited" from="InteractableArea" to="InteractableArea" method="_on_body_exited"]
 [connection signal="interacted" from="InteractableArea" to="." method="_on_interactable_area_interacted"]
 [connection signal="timeout" from="CloseDelayTimer" to="." method="_on_close_delay_timer_timeout"]
 

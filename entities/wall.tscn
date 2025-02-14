@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brkokmp56a3wv"]
+
+[ext_resource type="Material" uid="uid://cfgtt6wpwipnk" path="res://resources/brick.tres" id="1_scio6"]
+
+[node name="Wall" type="CSGBox3D"]
+material_override = ExtResource("1_scio6")
+use_collision = true
+collision_layer = 6

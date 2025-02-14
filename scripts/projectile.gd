@@ -6,6 +6,8 @@ extends Area3D
 
 @onready var visuals: Node3D = $Visuals
 @onready var particles: CPUParticles3D = $Visuals/CPUParticles3D
+@onready var light: OmniLight3D = $Light
+
 const EXPLOSION = preload("res://entities/explosion/explosion.tscn")
 
 var is_dead = false
@@ -32,8 +34,9 @@ func die():
 	speed = 0
 	create_explosion()
 	particles.emitting = false
-	tween.tween_property(visuals, "scale", Vector3(0.0, 0.0, 0.0), particles.lifetime)
-	tween.call_deferred("queue_free")
+	tween.tween_property(visuals, "scale", Vector3(0.0, 0.0, 0.0), particles.lifetime/2)
+	tween.tween_property(light, "light_energy", 0, particles.lifetime/2)
+	tween.tween_callback(queue_free)
 
 func create_explosion():
 	var exp = EXPLOSION.instantiate()

@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtbrs2816vjb5"]
+
+[ext_resource type="PackedScene" uid="uid://cicxe7qbgobce" path="res://assets/models/interactable_button.blend" id="1_gstm2"]
+[ext_resource type="Script" path="res://entities/interactable_button/interactable_button.gd" id="1_iuy7y"]
+[ext_resource type="Material" uid="uid://dwntmnjbf8rwb" path="res://resources/iron.tres" id="2_jro5b"]
+[ext_resource type="Material" uid="uid://bxwt35qn5i6ol" path="res://resources/button.tres" id="3_uwnpg"]
+[ext_resource type="Script" path="res://scripts/interactable_area.gd" id="5_qq8nb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f43o1"]
+size = Vector3(2, 2, 1)
+
+[sub_resource type="Animation" id="Animation_8j8e3"]
+resource_name = "press"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("interactable_button/Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.145609)]
+}
+
+[sub_resource type="Animation" id="Animation_n41eq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("interactable_button/Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ovqve"]
+_data = {
+"RESET": SubResource("Animation_n41eq"),
+"press": SubResource("Animation_8j8e3")
+}
+
+[node name="InteractableButton" type="Node3D"]
+script = ExtResource("1_iuy7y")
+
+[node name="interactable_button" parent="." instance=ExtResource("1_gstm2")]
+
+[node name="ButtonHolder" parent="interactable_button" index="0"]
+surface_material_override/0 = ExtResource("2_jro5b")
+
+[node name="Button" parent="interactable_button" index="1"]
+surface_material_override/0 = ExtResource("3_uwnpg")
+
+[node name="InteractableArea" type="Area3D" parent="." node_paths=PackedStringArray("tooltip_label")]
+script = ExtResource("5_qq8nb")
+tooltip_label = NodePath("TooltipLabel")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+shape = SubResource("BoxShape3D_f43o1")
+
+[node name="TooltipLabel" type="Label3D" parent="InteractableArea"]
+visible = false
+billboard = 1
+no_depth_test = true
+texture_filter = 2
+text = "E"
+font_size = 64
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ovqve")
+}
+
+[node name="AutoDeactivateTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="interacted" from="InteractableArea" to="." method="_on_interactable_area_interacted"]
+[connection signal="timeout" from="AutoDeactivateTimer" to="." method="_on_auto_deactivate_timer_timeout"]
+
+[editable path="interactable_button"]

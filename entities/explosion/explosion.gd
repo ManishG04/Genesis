@@ -12,7 +12,7 @@ var bodies_inside: Array[RigidBody3D] = []
 
 func _ready() -> void:
 	shape = col.shape as SphereShape3D
-	shape.radius = 0
+	shape.radius = 0.05
 	explosion.emitting = true
 
 func _process(delta: float) -> void:
@@ -33,4 +33,5 @@ func _on_body_entered(body: Node3D) -> void:
 
 
 func _on_body_exited(body: Node3D) -> void:
-	bodies_inside.erase(body)
+	if body is RigidBody3D:
+		bodies_inside.erase(body)

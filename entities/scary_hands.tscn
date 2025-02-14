@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctj2qsvsfj1p"]
+
+[ext_resource type="Texture2D" uid="uid://xabirvcd8fjg" path="res://assets/damaged_hand.png" id="1_tbu0s"]
+[ext_resource type="PackedScene" uid="uid://bf5pekei8rh8" path="res://assets/models/dirt_blob.blend" id="2_7iyj5"]
+
+[node name="ScaryHands" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33875, 0.28553, 0)
+cast_shadow = 2
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_tbu0s")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(0.696154, 0, 0, 0, 0.696154, 0, 0, 0, 0.696154, 0.423507, -0.117605, 1.25864)
+cast_shadow = 2
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_tbu0s")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300231, -0.0732108, 0)
+cast_shadow = 2
+flip_h = true
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_tbu0s")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0275172, 0, 0.438077)
+cast_shadow = 2
+flip_h = true
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_tbu0s")
+
+[node name="dirt_blob" parent="." instance=ExtResource("2_7iyj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.335861, 0, -0.0545942)
+
+[node name="dirt_blob2" parent="." instance=ExtResource("2_7iyj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381013, 0, -0.0545942)
+
+[node name="dirt_blob3" parent="." instance=ExtResource("2_7iyj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00775033, 0, 0.479419)
+
+[node name="dirt_blob4" parent="." instance=ExtResource("2_7iyj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.380087, 0, 1.29563)

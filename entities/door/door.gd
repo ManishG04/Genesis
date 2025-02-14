@@ -3,7 +3,6 @@ extends Activatable
 
 @export var is_interactable: bool = true
 @export var is_open: bool = false
-@export var auto_close: bool = true
 @export_range(0, 10, .05, "suffix:s") var opening_time: float = 0.25
 @export_range(0, 10, .05, "suffix:s") var close_delay: float = 0.0
 
@@ -35,8 +34,10 @@ func on_activate() -> void:
 	open()
 
 func on_deactivate() -> void:
-	if auto_close:
+	if close_delay > 0:
 		close_delay_timer.start(close_delay)
+	else:
+		close()
 
 func open() -> void:
 	if is_open: return

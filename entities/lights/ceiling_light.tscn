@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ysripv4mvk5"]
+
+[ext_resource type="PackedScene" uid="uid://qif0yls50jsw" path="res://assets/models/ceiling_light.blend" id="1_st8mv"]
+
+[node name="CeilingLight" type="Node3D"]
+
+[node name="ceiling_light" parent="." instance=ExtResource("1_st8mv")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.369023, 0)
+shadow_enabled = true
