@@ -80,43 +80,33 @@ collision_layer = 4
 
 [node name="Wall0" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -25.5)
-size = Vector3(64, 7, 1)
 
 [node name="Wall1" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.5, 9, -10.25)
-size = Vector3(31.5, 19, 1)
 
 [node name="Wall2" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.5, 2.75, -14.5)
-size = Vector3(23, 6.5, 1)
 
 [node name="Wall6" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26, 3, -20.5)
-size = Vector3(12, 7, 1)
 
 [node name="Wall8" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19, 5, -20.5)
-size = Vector3(2, 3, 1)
 
 [node name="Wall9" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.5, 4.75, -2)
-size = Vector3(1, 2.5, 2)
 
 [node name="Wall7" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.5, 3, -20.5)
-size = Vector3(1, 7, 1)
 
 [node name="Wall3" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.5, 2.75, 12.5)
-size = Vector3(27, 6.5, 1)
 
 [node name="Wall4" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 3, 25.75)
-size = Vector3(50.5, 7, 1)
 
 [node name="Wall5" parent="Walls" instance=ExtResource("3_smq86")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.25, 3, 5.25)
-size = Vector3(16, 7, 1)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 3.5, 2)
@@ -160,37 +150,38 @@ material_override = ExtResource("2_vja3x")
 use_collision = true
 collision_layer = 4
 
-[node name="Ground" parent="Floor" instance=ExtResource("2_hfwgk")]
-size = Vector3(64, 1, 52)
-
-[node name="Ground2" parent="Floor" instance=ExtResource("2_hfwgk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0.75, -13)
-size = Vector3(5, 0.5, 2)
-
-[node name="Ground3" parent="Floor" instance=ExtResource("2_hfwgk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1.25, -11)
-size = Vector3(5, 0.5, 2)
-
-[node name="Ground4" parent="Floor" instance=ExtResource("2_hfwgk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 1.75, -9)
-size = Vector3(5, 0.5, 2)
-
-[node name="Ground5" parent="Floor" instance=ExtResource("2_hfwgk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2.25, -7)
-size = Vector3(5, 0.5, 2)
-
-[node name="Ground6" parent="Floor" instance=ExtResource("2_hfwgk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2.75, -5)
-size = Vector3(5, 0.5, 2)
-
-[node name="Ground7" parent="Floor" instance=ExtResource("2_hfwgk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 3.25, 0.5)
-size = Vector3(5, 0.5, 9)
+[node name="CSGBox3D2" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0.25)
+size = Vector3(63.5, 1, 50.5)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0, 15.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.5, 15.75)
 operation = 2
 size = Vector3(16.5, 4, 21)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.75, 2.75, -5)
+size = Vector3(4.5, 0.5, 2)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.75, 3.25, 0.5)
+size = Vector3(4.5, 0.5, 9)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.75, 2.25, -7)
+size = Vector3(4.5, 0.5, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.75, 1.75, -9)
+size = Vector3(4.5, 0.5, 2)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.75, 1.25, -11)
+size = Vector3(4.5, 0.5, 2)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.75, 0.75, -13)
+size = Vector3(4.5, 0.5, 2)
 
 [node name="Ceiling" type="CSGCombiner3D" parent="."]
 material_override = ExtResource("7_cdkp4")
@@ -199,7 +190,6 @@ collision_layer = 4
 
 [node name="Ground" parent="Ceiling" instance=ExtResource("2_hfwgk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 6.5, 0)
-size = Vector3(63, 1, 52)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Ceiling"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 6.5, 16.25)
