@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://b70na3pjo4ig2"]
+[gd_scene load_steps=23 format=3 uid="uid://b70na3pjo4ig2"]
 
 [ext_resource type="Texture2D" uid="uid://dt35ijkyfk7eh" path="res://icon.svg" id="1_btvt1"]
 [ext_resource type="PackedScene" uid="uid://dopuukxt8g7ej" path="res://entities/player/player.tscn" id="1_h8m8o"]
 [ext_resource type="PackedScene" uid="uid://dwp134vs1bad8" path="res://entities/floor.tscn" id="2_hfwgk"]
 [ext_resource type="PackedScene" uid="uid://damlm6aj0w1c4" path="res://entities/ceiling.tscn" id="3_5f3n6"]
+[ext_resource type="PackedScene" uid="uid://brkokmp56a3wv" path="res://entities/wall.tscn" id="3_smq86"]
+[ext_resource type="PackedScene" uid="uid://c5antgn7lx8w3" path="res://entities/Window.tscn" id="4_tux6k"]
 [ext_resource type="PackedScene" uid="uid://dsjm6u2ixagqh" path="res://entities/door/door.tscn" id="7_sghgf"]
 [ext_resource type="PackedScene" uid="uid://bxm0mxjy5loec" path="res://entities/floor_button/floor_button.tscn" id="8_uh07e"]
 [ext_resource type="PackedScene" uid="uid://dtbrs2816vjb5" path="res://entities/interactable_button/interactable_button.tscn" id="10_tk6nn"]
@@ -69,6 +71,93 @@ environment = SubResource("Environment_2mgr3")
 [node name="Player" parent="." instance=ExtResource("1_h8m8o")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -25.5, 1.94853, -21.5)
 
+[node name="Wall" parent="." instance=ExtResource("3_smq86")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 3.25, 12.25)
+size = Vector3(1, 5.5, 26.5)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 3.25, 0.25)
+size = Vector3(1, 5.5, 50.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 3.25, -14)
+size = Vector3(1, 5.5, 22)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 3.25, -9.5)
+size = Vector3(1, 5.5, 31)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 3.25, 2.5)
+size = Vector3(1, 5.5, 7)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 4.75, -3.5)
+size = Vector3(1, 2.5, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 1.75, -3.5)
+size = Vector3(1, 2.5, 1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 1.5, -5)
+size = Vector3(1, 2, 2)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 1.25, -7)
+size = Vector3(1, 1.5, 2)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 1, -9)
+size = Vector3(1, 1, 2)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 0.75, -11)
+size = Vector3(1, 0.5, 2)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5, 4.75, -2)
+size = Vector3(1, 2.5, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 3.25, 6.5)
+size = Vector3(15, 5.5, 1)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25, 3.25, 25.5)
+size = Vector3(48.5, 5.5, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 3.25, -25.5)
+size = Vector3(64.5, 5.5, 1)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 3.25, -20)
+size = Vector3(12, 5.5, 1)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 3.25, -20)
+size = Vector3(1, 5.5, 1)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 4.75, -20)
+size = Vector3(2, 2.5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 4.75, -2)
+size = Vector3(1, 2.5, 2)
+
+[node name="Window" parent="Wall" instance=ExtResource("4_tux6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 4, 6.5)
+
+[node name="Window2" parent="Wall" instance=ExtResource("4_tux6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 4, 6.5)
+
+[node name="Window3" parent="Wall" instance=ExtResource("4_tux6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 4, 6.5)
+
 [node name="Floor" parent="." instance=ExtResource("2_hfwgk")]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Floor"]
@@ -76,9 +165,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0.25)
 size = Vector3(63.5, 1, 50.5)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.5, 15.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0.5, 16)
 operation = 2
-size = Vector3(16.5, 4, 21)
+size = Vector3(16.5, 4, 20)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.75, 2.75, -5)
@@ -162,8 +251,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 3.5, -0.883707)
 [node name="CeilingLight2" parent="Lights" instance=ExtResource("13_g134h")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -27.5, 5.5, -1.88371)
 
+[node name="CeilingLight5" parent="Lights" instance=ExtResource("13_g134h")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -16.5, 4.5, -2)
+max_light_energy = 0.5
+min_light_energy = 0.1
+
 [node name="CeilingLight4" parent="Lights" instance=ExtResource("13_g134h")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -30.5, 4, -12.3837)
+max_light_energy = 0.7
+min_light_energy = 0.1
 
 [node name="SpotLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8747, 6, 9.5)
