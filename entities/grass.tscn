@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6t3gbs0y02us"]
+
+[ext_resource type="Material" uid="uid://cbmbfb2uvn8va" path="res://resources/grass.tres" id="1_hbelf"]
+
+[node name="Grass" type="CSGCombiner3D"]
+material_override = ExtResource("1_hbelf")
+use_collision = true
+collision_layer = 4

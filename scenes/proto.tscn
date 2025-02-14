@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://b70na3pjo4ig2"]
+[gd_scene load_steps=21 format=3 uid="uid://b70na3pjo4ig2"]
 
 [ext_resource type="Texture2D" uid="uid://dt35ijkyfk7eh" path="res://icon.svg" id="1_btvt1"]
 [ext_resource type="PackedScene" uid="uid://dopuukxt8g7ej" path="res://entities/player/player.tscn" id="1_h8m8o"]
 [ext_resource type="PackedScene" uid="uid://dwp134vs1bad8" path="res://entities/floor.tscn" id="2_hfwgk"]
-[ext_resource type="Material" uid="uid://b7raacdonewve" path="res://resources/tile.tres" id="2_vja3x"]
-[ext_resource type="Material" uid="uid://rfidhutxy634" path="res://resources/dark_tile.tres" id="7_cdkp4"]
+[ext_resource type="PackedScene" uid="uid://damlm6aj0w1c4" path="res://entities/ceiling.tscn" id="3_5f3n6"]
 [ext_resource type="PackedScene" uid="uid://dsjm6u2ixagqh" path="res://entities/door/door.tscn" id="7_sghgf"]
 [ext_resource type="PackedScene" uid="uid://bxm0mxjy5loec" path="res://entities/floor_button/floor_button.tscn" id="8_uh07e"]
 [ext_resource type="PackedScene" uid="uid://dtbrs2816vjb5" path="res://entities/interactable_button/interactable_button.tscn" id="10_tk6nn"]
@@ -70,10 +69,7 @@ environment = SubResource("Environment_2mgr3")
 [node name="Player" parent="." instance=ExtResource("1_h8m8o")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -25.5, 1.94853, -21.5)
 
-[node name="Floor" type="CSGCombiner3D" parent="."]
-material_override = ExtResource("2_vja3x")
-use_collision = true
-collision_layer = 4
+[node name="Floor" parent="." instance=ExtResource("2_hfwgk")]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0.25)
@@ -108,13 +104,11 @@ size = Vector3(4.5, 0.5, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.75, 0.75, -13)
 size = Vector3(4.5, 0.5, 2)
 
-[node name="Ceiling" type="CSGCombiner3D" parent="."]
-material_override = ExtResource("7_cdkp4")
-use_collision = true
-collision_layer = 4
+[node name="Ceiling" parent="." instance=ExtResource("3_5f3n6")]
 
-[node name="Ground" parent="Ceiling" instance=ExtResource("2_hfwgk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 6.5, 0)
+[node name="CSGBox3D9" type="CSGBox3D" parent="Ceiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 6.5, 0.25)
+size = Vector3(63.5, 1, 50.5)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Ceiling"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 6.5, 16.25)
