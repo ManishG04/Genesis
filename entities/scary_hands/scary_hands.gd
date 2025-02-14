@@ -4,6 +4,7 @@ extends Activatable
 
 func on_activate():
 	ap.play("appear")
+	Global.player.scare()
 	
 func on_deactivate():
 	pass

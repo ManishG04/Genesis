@@ -21,7 +21,7 @@ var stamina := 100.0:
 		_on_update_stamina(new)
 
 @onready var head: Node3D = %Head
-@onready var camera: Camera3D = %Head/Camera3D
+@onready var camera: Camera3D = %Camera3D
 @onready var stamina_bar: TextureProgressBar = %StaminaBar
 @onready var aim_ray_cast: RayCast3D = %AimRayCast
 @onready var speed_indicator: SpeedIndicator = %SpeedIndicator
@@ -105,3 +105,6 @@ func _push_pushables(delta: float) -> void:
 
 func _on_update_stamina(new: float):
 	stamina_bar.value = new
+
+func scare(trauma: float = 10.0):
+	%ShakeableCameraHolder.add_trauma(trauma)

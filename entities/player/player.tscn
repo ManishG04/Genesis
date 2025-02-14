@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dopuukxt8g7ej"]
+[gd_scene load_steps=42 format=3 uid="uid://dopuukxt8g7ej"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_5m0xc"]
 [ext_resource type="Script" path="res://entities/player/abilities.gd" id="2_b6kdo"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://duy12qmixa3ah" path="res://assets/ui/energy_bar_in.png" id="5_smxdj"]
 [ext_resource type="Script" path="res://entities/player/aim_ray_cast.gd" id="6_gsapg"]
 [ext_resource type="Script" path="res://entities/player/time_stopper.gd" id="6_p3yj5"]
+[ext_resource type="Script" path="res://entities/player/shakeable.gd" id="7_aswu8"]
 [ext_resource type="Texture2D" uid="uid://orclydn4tkd1" path="res://assets/ui/reticule.png" id="7_rgvwd"]
 [ext_resource type="Texture2D" uid="uid://dq8l15a3pvc40" path="res://assets/ui/reticule_active.png" id="8_uv7fy"]
 [ext_resource type="Texture2D" uid="uid://bv17rw2pa2k68" path="res://assets/ui/watch.png" id="11_ml7tb"]
@@ -85,6 +86,10 @@ orientation = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ler78"]
 height = 1.5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_42y15"]
+frequency = 0.1586
+fractal_octaves = 4
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_7btg6"]
 frames = 2
@@ -171,9 +176,15 @@ script = ExtResource("6_p3yj5")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="ShakeableCameraHolder" type="Node3D" parent="Head"]
+unique_name_in_owner = true
+script = ExtResource("7_aswu8")
+noise = SubResource("FastNoiseLite_42y15")
 
-[node name="HandSprite" type="Sprite3D" parent="Head/Camera3D"]
+[node name="Camera3D" type="Camera3D" parent="Head/ShakeableCameraHolder"]
+unique_name_in_owner = true
+
+[node name="HandSprite" type="Sprite3D" parent="Head/ShakeableCameraHolder/Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845, -0.365, -0.81)
 pixel_size = 0.004
@@ -184,7 +195,7 @@ texture_filter = 2
 texture = ExtResource("4_cnvr1")
 hframes = 2
 
-[node name="AimRayCast" type="RayCast3D" parent="Head/Camera3D"]
+[node name="AimRayCast" type="RayCast3D" parent="Head/ShakeableCameraHolder/Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -5, 0)

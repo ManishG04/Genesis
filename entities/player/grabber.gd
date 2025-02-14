@@ -3,7 +3,7 @@ extends Node
 
 @export var enabled: bool = true
 
-@onready var camera: Node3D = %Head/Camera3D
+@onready var camera: Node3D = %Camera3D
 @onready var hand_sprite: Sprite3D = %HandSprite
 @onready var player: Player = $"../.."
 @onready var aim_ray_cast: RayCast3D = %AimRayCast

@@ -2,7 +2,6 @@ class_name PositionSwapper
 extends Node
 
 @export var enabled: bool = true
-@onready var camera: Node3D = %Head/Camera3D
 @onready var player: Player = $"../.."
 @onready var aim_ray_cast: RayCast3D = %AimRayCast
 
