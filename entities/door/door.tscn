@@ -24,7 +24,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_h75x8"]
 resource_name = "open"
-length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -32,7 +31,7 @@ tracks/0/path = NodePath("door_frame/Door:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, -2.63654, 0)]
@@ -84,8 +83,21 @@ font_size = 64
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 shape = SubResource("BoxShape3D_kgkfy")
 
+[node name="CloseDelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CloseDelayTimerLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+texture_filter = 2
+text = "1.0s"
+font_size = 64
+
 [connection signal="body_entered" from="InteractableArea" to="InteractableArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractableArea" to="InteractableArea" method="_on_body_exited"]
 [connection signal="interacted" from="InteractableArea" to="." method="_on_interactable_area_interacted"]
+[connection signal="timeout" from="CloseDelayTimer" to="." method="_on_close_delay_timer_timeout"]
 
 [editable path="door_frame"]

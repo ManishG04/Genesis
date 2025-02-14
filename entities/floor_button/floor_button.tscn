@@ -8,6 +8,21 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qmacg"]
 size = Vector3(2, 1, 2)
 
+[sub_resource type="Animation" id="Animation_qjmps"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("floor_button/Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.225, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_fr8xm"]
 resource_name = "press"
 length = 0.3
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0.225, 0), Vector3(0, 0.0986899, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_qjmps"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("floor_button/Button:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.225, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g78gu"]
@@ -54,6 +54,7 @@ script = ExtResource("1_frgqp")
 material_override = ExtResource("3_ls1b4")
 
 [node name="Button" parent="floor_button" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0)
 material_override = ExtResource("4_rocpu")
 
 [node name="ButtonArea" type="Area3D" parent="."]

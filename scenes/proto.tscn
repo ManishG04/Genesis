@@ -47,6 +47,7 @@ adjustment_contrast = 3.22
 adjustment_color_correction = SubResource("CurveXYZTexture_ov6lx")
 
 [node name="Proto" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -7, 0, 0)
@@ -1479,6 +1480,7 @@ texture = ExtResource("1_btvt1")
 [node name="Door" parent="." instance=ExtResource("7_sghgf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 1)
 is_interactable = false
+close_delay = 1.0
 
 [node name="Door2" parent="." instance=ExtResource("7_sghgf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 9)
