@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d155ehek3negh"]
+
+[ext_resource type="Script" path="res://entities/auto_activator/auto_activator.gd" id="1_v7dyx"]
+
+[node name="AutoActivatorArea" type="Area3D"]
+script = ExtResource("1_v7dyx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b70na3pjo4ig2"]
+[gd_scene load_steps=25 format=3 uid="uid://b70na3pjo4ig2"]
 
 [ext_resource type="Texture2D" uid="uid://dt35ijkyfk7eh" path="res://icon.svg" id="1_btvt1"]
 [ext_resource type="PackedScene" uid="uid://dopuukxt8g7ej" path="res://entities/player/player.tscn" id="1_h8m8o"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ctj2qsvsfj1p" path="res://entities/scary_hands.tscn" id="12_4s46l"]
 [ext_resource type="PackedScene" uid="uid://ysripv4mvk5" path="res://entities/lights/ceiling_light.tscn" id="13_g134h"]
 [ext_resource type="PackedScene" uid="uid://dpe0piw7vwtat" path="res://entities/crate.tscn" id="14_riwim"]
+[ext_resource type="PackedScene" uid="uid://d155ehek3negh" path="res://entities/auto_activator/auto_activator.tscn" id="16_3eocx"]
 
 [sub_resource type="Curve" id="Curve_cyuty"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -52,6 +53,9 @@ fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.1
 adjustment_contrast = 3.22
 adjustment_color_correction = SubResource("CurveXYZTexture_ov6lx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udp8b"]
+size = Vector3(3, 2.5, 5)
 
 [node name="Proto" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
@@ -244,7 +248,13 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29.5,
 [node name="Lights" type="Node" parent="."]
 
 [node name="CeilingLight" parent="Lights" instance=ExtResource("13_g134h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 3.5, 2.11629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 3.5, -0.883707)
+
+[node name="CeilingLight2" parent="Lights" instance=ExtResource("13_g134h")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -27.5, 5.5, -1.88371)
+
+[node name="CeilingLight4" parent="Lights" instance=ExtResource("13_g134h")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -30.5, 4, -12.3837)
 
 [node name="SpotLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8747, 6, 9.5)
@@ -292,3 +302,11 @@ transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -24.7913, 
 
 [node name="ScaryHands" parent="." instance=ExtResource("12_4s46l")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -29.5, 0.5, 2.5)
+
+[node name="AutoActivatorArea" parent="." node_paths=PackedStringArray("activatable") instance=ExtResource("16_3eocx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 0.5, -2)
+activatable = NodePath("../ScaryHands")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AutoActivatorArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 4)
+shape = SubResource("BoxShape3D_udp8b")
