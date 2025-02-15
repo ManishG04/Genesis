@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://n8h34a6jqd2h"]
+
+[ext_resource type="PackedScene" uid="uid://ch47j2j7og1k" path="res://assets/models/tree_2.blend" id="1_ym4by"]
+
+[node name="Tree2" instance=ExtResource("1_ym4by")]

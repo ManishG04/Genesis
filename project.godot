@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DealWithDevil"
-run/main_scene="res://scenes/proto.tscn"
+run/main_scene="res://scenes/proto_2.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -35,7 +35,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AudioSub/plugin.cfg")
+enabled=PackedStringArray("res://addons/AudioSub/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [gui]
 

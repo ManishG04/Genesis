@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://b70na3pjo4ig2"]
+[gd_scene load_steps=17 format=3 uid="uid://b70na3pjo4ig2"]
 
 [ext_resource type="Texture2D" uid="uid://dt35ijkyfk7eh" path="res://icon.svg" id="1_btvt1"]
 [ext_resource type="PackedScene" uid="uid://dopuukxt8g7ej" path="res://entities/player/player.tscn" id="1_h8m8o"]
+[ext_resource type="Environment" uid="uid://chws42a8y1vug" path="res://resources/dark_environment.tres" id="1_r14sg"]
 [ext_resource type="PackedScene" uid="uid://dwp134vs1bad8" path="res://entities/floor.tscn" id="2_hfwgk"]
 [ext_resource type="PackedScene" uid="uid://damlm6aj0w1c4" path="res://entities/ceiling.tscn" id="3_5f3n6"]
 [ext_resource type="PackedScene" uid="uid://brkokmp56a3wv" path="res://entities/wall.tscn" id="3_smq86"]
@@ -14,43 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://ysripv4mvk5" path="res://entities/lights/ceiling_light.tscn" id="13_g134h"]
 [ext_resource type="PackedScene" uid="uid://dpe0piw7vwtat" path="res://entities/crate.tscn" id="14_riwim"]
 [ext_resource type="PackedScene" uid="uid://d155ehek3negh" path="res://entities/auto_activator/auto_activator.tscn" id="16_3eocx"]
-
-[sub_resource type="Curve" id="Curve_cyuty"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_m1031"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_bl05n"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ov6lx"]
-curve_x = SubResource("Curve_cyuty")
-curve_y = SubResource("Curve_m1031")
-curve_z = SubResource("Curve_bl05n")
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q7ibp"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_ihjdh"]
-sky_material = SubResource("ProceduralSkyMaterial_q7ibp")
-
-[sub_resource type="Environment" id="Environment_2mgr3"]
-background_mode = 1
-sky = SubResource("Sky_ihjdh")
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.0
-glow_bloom = 0.34
-fog_enabled = true
-fog_light_color = Color(0, 0, 0, 1)
-fog_density = 0.1
-adjustment_contrast = 3.22
-adjustment_color_correction = SubResource("CurveXYZTexture_ov6lx")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_udp8b"]
 size = Vector3(3, 2.5, 5)
@@ -66,7 +30,7 @@ directional_shadow_mode = 0
 sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2mgr3")
+environment = ExtResource("1_r14sg")
 
 [node name="Player" parent="." instance=ExtResource("1_h8m8o")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -25.5, 1.94853, -21.5)
