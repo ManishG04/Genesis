@@ -35,7 +35,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AudioSub/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/AudioSub/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [gui]
 
