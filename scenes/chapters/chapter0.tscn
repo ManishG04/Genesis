@@ -79,7 +79,7 @@ max_light_energy = 4.0
 min_light_energy = 2.0
 
 [node name="CeilingLight9" parent="Lights" instance=ExtResource("4_ln3rt")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -31, 15, 0.5)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -31, 13, 0.5)
 light_range = 10.0
 max_light_energy = 4.0
 min_light_energy = 2.0
@@ -103,6 +103,12 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -36.5, 5, 
 
 [node name="Crate2" parent="Crates" instance=ExtResource("7_ysvib")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -36.5, 4, -3.5)
+
+[node name="Door" parent="." instance=ExtResource("6_xxkb4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 3.5, -14)
+
+[node name="Door2" parent="." instance=ExtResource("6_xxkb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 9.5, 1)
 
 [node name="LightTiles" parent="." instance=ExtResource("5_45054")]
 
@@ -178,6 +184,26 @@ size = Vector3(31, 1, 19.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -1.75)
 size = Vector3(4, 1, 29.5)
 
+[node name="CSGBox3D26" type="CSGBox3D" parent="LightTiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 9, 6.5)
+size = Vector3(3, 1, 10)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="LightTiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 9.75, 13.5)
+size = Vector3(3, 0.5, 2)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="LightTiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 10.25, 16.5)
+size = Vector3(3, 0.5, 2)
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="LightTiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 10.75, 19.5)
+size = Vector3(3, 0.5, 2)
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="LightTiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 11.25, 22.5)
+size = Vector3(3, 0.5, 2)
+
 [node name="CSGBox3D2" type="CSGBox3D" parent="LightTiles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, 0.75)
 size = Vector3(1, 11, 24.5)
@@ -203,8 +229,10 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -20.026, 5, -14)
 operation = 2
 size = Vector3(2, 3, 2)
 
-[node name="Door" parent="LightTiles" instance=ExtResource("6_xxkb4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 3.5, -14)
+[node name="CSGBox3D19" type="CSGBox3D" parent="LightTiles"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -31.026, 11, 1)
+operation = 2
+size = Vector3(2, 3, 2)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="LightTiles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.3415, 9.5, -7.24056)
