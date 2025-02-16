@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://b7raacdonewve" path="res://resources/tile.tres" id="1_7eq2r"]
 
-[node name="Floor" type="CSGCombiner3D"]
+[node name="Tiles" type="CSGCombiner3D"]
 material_override = ExtResource("1_7eq2r")
 use_collision = true
 collision_layer = 4

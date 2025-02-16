@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://rfidhutxy634" path="res://resources/dark_tile.tres" id="1_ef0yn"]
 
-[node name="Ceiling" type="CSGCombiner3D"]
+[node name="DarkTiles" type="CSGCombiner3D"]
 material_override = ExtResource("1_ef0yn")
 use_collision = true
 collision_layer = 6

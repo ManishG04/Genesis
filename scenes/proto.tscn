@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dt35ijkyfk7eh" path="res://icon.svg" id="1_btvt1"]
 [ext_resource type="PackedScene" uid="uid://dopuukxt8g7ej" path="res://entities/player/player.tscn" id="1_h8m8o"]
-[ext_resource type="PackedScene" uid="uid://dwp134vs1bad8" path="res://entities/floor.tscn" id="2_hfwgk"]
-[ext_resource type="PackedScene" uid="uid://damlm6aj0w1c4" path="res://entities/ceiling.tscn" id="3_5f3n6"]
-[ext_resource type="PackedScene" uid="uid://brkokmp56a3wv" path="res://entities/wall.tscn" id="3_smq86"]
+[ext_resource type="PackedScene" uid="uid://dwp134vs1bad8" path="res://entities/platforms/tiles.tscn" id="2_hfwgk"]
+[ext_resource type="PackedScene" uid="uid://damlm6aj0w1c4" path="res://entities/platforms/dark_tiles.tscn" id="3_5f3n6"]
+[ext_resource type="PackedScene" uid="uid://brkokmp56a3wv" path="res://entities/platforms/bricks.tscn" id="3_smq86"]
 [ext_resource type="PackedScene" uid="uid://c5antgn7lx8w3" path="res://entities/Window.tscn" id="4_tux6k"]
 [ext_resource type="PackedScene" uid="uid://dsjm6u2ixagqh" path="res://entities/door/door.tscn" id="7_sghgf"]
 [ext_resource type="PackedScene" uid="uid://bxm0mxjy5loec" path="res://entities/floor_button/floor_button.tscn" id="8_uh07e"]
