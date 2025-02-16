@@ -46,7 +46,7 @@ func open() -> void:
 
 func close() -> void:
 	if not is_open: return
-	ap.play_backwards("open")
+	ap.play("close")
 	is_open = false
 	
 func _on_interactable_area_interacted() -> void:

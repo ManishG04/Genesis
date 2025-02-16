@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhnx5bhpv5mt4"]
+[gd_scene load_steps=13 format=3 uid="uid://dhnx5bhpv5mt4"]
 
 [ext_resource type="PackedScene" uid="uid://c2l3ykspctylx" path="res://entities/objects/lava.tscn" id="1_y5ke5"]
 [ext_resource type="PackedScene" uid="uid://dwp134vs1bad8" path="res://entities/objects/tiles.tscn" id="2_3a031"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dpe0piw7vwtat" path="res://entities/crate.tscn" id="7_ysvib"]
 [ext_resource type="PackedScene" uid="uid://ctjw287u1m1f6" path="res://entities/narrate_area.tscn" id="8_sms6x"]
 [ext_resource type="AudioStream" uid="uid://8r8dji38hvvh" path="res://assets/audio/ah-shit.mp3" id="9_ahmnh"]
+[ext_resource type="AudioStream" uid="uid://cq6j6kj6q04fb" path="res://assets/audio/i-wonder.mp3" id="10_c4uht"]
 
 [sub_resource type="Environment" id="Environment_fulam"]
 background_mode = 1
@@ -214,8 +215,8 @@ height = 11.0
 
 [node name="NarrateArea" parent="." instance=ExtResource("8_sms6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 8)
-audio = ExtResource("9_ahmnh")
-subtitle = "Ah shit. This nightmare again!"
+audio_list = Array[AudioStream]([ExtResource("9_ahmnh"), ExtResource("10_c4uht")])
+subtitle_list = Array[String](["Ah shit. This nightmare again!", "I wonder why I see them every fucking day"])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NarrateArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -0.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dopuukxt8g7ej"]
+[gd_scene load_steps=43 format=3 uid="uid://dopuukxt8g7ej"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_5m0xc"]
 [ext_resource type="Script" path="res://entities/player/abilities.gd" id="2_b6kdo"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://72uxdlk8dls4" path="res://assets/ui/overlay.png" id="15_kj237"]
 [ext_resource type="Shader" path="res://entities/player/shake.gdshader" id="15_nt8bk"]
 [ext_resource type="Script" path="res://entities/player/speed_indicator.gd" id="16_e01ef"]
+[ext_resource type="AudioStream" uid="uid://ci55vm6e0bnxp" path="res://assets/audio/concrete-footstep-1-6265.ogg" id="22_hc4wl"]
 
 [sub_resource type="Gradient" id="Gradient_ediai"]
 interpolation_mode = 2
@@ -327,3 +328,7 @@ script = ExtResource("16_e01ef")
 [node name="NarrationStream" type="AudioStreamPlayer" parent="Audio"]
 unique_name_in_owner = true
 bus = &"Narration"
+
+[node name="FootstepsStream" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("22_hc4wl")

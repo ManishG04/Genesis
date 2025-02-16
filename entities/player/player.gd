@@ -26,6 +26,7 @@ var stamina := 100.0:
 @onready var aim_ray_cast: RayCast3D = %AimRayCast
 @onready var speed_indicator: SpeedIndicator = %SpeedIndicator
 @onready var narration_stream: AudioStreamPlayer = %NarrationStream
+@onready var footsteps_stream: AudioStreamPlayer = %FootstepsStream
 
 
 var t_bob := 0.0
@@ -87,6 +88,10 @@ func _headbob(time: float) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ/2) * BOB_AMP
+	if footsteps_stream.playing == false and is_on_floor() and velocity.length_squared() > 1:
+		footsteps_stream.play()
+		footsteps_stream.pitch_scale = randf_range(0.8, 1.2)
+		footsteps_stream.volume_db = randf_range(-5, 0)
 	return pos
 
 func _push_pushables(delta: float) -> void:
@@ -110,9 +115,24 @@ func _on_update_stamina(new: float):
 func scare(trauma: float = 10.0):
 	%ShakeableCameraHolder.add_trauma(trauma)
 
-func say(audio_stream: AudioStream):
-	if narration_stream.stream != audio_stream:
-		narration_stream.stream = audio_stream
+var narrations: Array[AudioStream] = []
+func say(audio_stream: AudioStream, subtitle: String):
+	narrations.push_back(audio_stream)
+	while len(narrations):
+		#WAIT
+		if narration_stream.playing:
+			await narration_stream.finished
+			
+		#PLAY
+		var curr_stream = narrations[0]
+		narration_stream.stream = curr_stream
 		narration_stream.play()
+		Subtitle.set_text(subtitle)
+		
+		#WAIT
 		await narration_stream.finished
+		
+		#CLEAR
 		narration_stream.stream = null
+		narrations.pop_front()
+		Subtitle.clear()
