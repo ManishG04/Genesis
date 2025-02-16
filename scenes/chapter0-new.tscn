@@ -119,7 +119,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 9.5, 2)
 [node name="NarrationAreas" type="Node" parent="."]
 
 [node name="NarrateArea" parent="NarrationAreas" instance=ExtResource("7_fanu1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 8)
 audio_list = Array[AudioStream]([ExtResource("8_mde5s"), ExtResource("9_4ymnr")])
 subtitle_list = Array[String](["Ah shit. This nightmare again!", "I wonder why I see them every fucking day"])
 
