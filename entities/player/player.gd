@@ -25,6 +25,7 @@ var stamina := 100.0:
 @onready var stamina_bar: TextureProgressBar = %StaminaBar
 @onready var aim_ray_cast: RayCast3D = %AimRayCast
 @onready var speed_indicator: SpeedIndicator = %SpeedIndicator
+@onready var narration_stream: AudioStreamPlayer = %NarrationStream
 
 
 var t_bob := 0.0
@@ -108,3 +109,10 @@ func _on_update_stamina(new: float):
 
 func scare(trauma: float = 10.0):
 	%ShakeableCameraHolder.add_trauma(trauma)
+
+func say(audio_stream: AudioStream):
+	if narration_stream.stream != audio_stream:
+		narration_stream.stream = audio_stream
+		narration_stream.play()
+		await narration_stream.finished
+		narration_stream.stream = null

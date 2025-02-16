@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhnx5bhpv5mt4"]
+[gd_scene load_steps=12 format=3 uid="uid://dhnx5bhpv5mt4"]
 
 [ext_resource type="PackedScene" uid="uid://c2l3ykspctylx" path="res://entities/objects/lava.tscn" id="1_y5ke5"]
 [ext_resource type="PackedScene" uid="uid://dwp134vs1bad8" path="res://entities/objects/tiles.tscn" id="2_3a031"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bkk5x6t0exvv2" path="res://entities/objects/light_tiles.tscn" id="5_45054"]
 [ext_resource type="PackedScene" uid="uid://dsjm6u2ixagqh" path="res://entities/door/door.tscn" id="6_xxkb4"]
 [ext_resource type="PackedScene" uid="uid://dpe0piw7vwtat" path="res://entities/crate.tscn" id="7_ysvib"]
+[ext_resource type="PackedScene" uid="uid://ctjw287u1m1f6" path="res://entities/narrate_area.tscn" id="8_sms6x"]
+[ext_resource type="AudioStream" uid="uid://8r8dji38hvvh" path="res://assets/audio/ah-shit.mp3" id="9_ahmnh"]
 
 [sub_resource type="Environment" id="Environment_fulam"]
 background_mode = 1
@@ -18,6 +20,9 @@ fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 fog_light_energy = 0.1
 fog_density = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_72nmm"]
+size = Vector3(3.5, 3.5, 2)
 
 [node name="Chapter0" type="Node3D"]
 
@@ -35,15 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 10)
 [node name="Tiles" parent="." instance=ExtResource("2_3a031")]
 
 [node name="Lights" type="Node" parent="."]
-
-[node name="CeilingLight" parent="Lights" instance=ExtResource("4_ln3rt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, 9)
-flickering_enabled = false
-light_range = 7.5
-max_light_energy = 4.0
-min_light_energy = 2.0
-max_delay = 5.0
-min_delay = 3.0
 
 [node name="CeilingLight2" parent="Lights" instance=ExtResource("4_ln3rt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.5, -6)
@@ -86,6 +82,26 @@ transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114
 light_range = 10.0
 max_light_energy = 4.0
 min_light_energy = 2.0
+
+[node name="CeilingLight" parent="Lights" instance=ExtResource("4_ln3rt")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -20.5, 7, -14)
+light_range = 5.0
+max_light_energy = 0.5
+min_light_energy = 0.1
+
+[node name="Crates" type="Node" parent="."]
+
+[node name="Crate" parent="Crates" instance=ExtResource("7_ysvib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5, 4, -2)
+
+[node name="Crate3" parent="Crates" instance=ExtResource("7_ysvib")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -35.5, 4, -2.75913)
+
+[node name="Crate4" parent="Crates" instance=ExtResource("7_ysvib")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -36.5, 5, -2.75913)
+
+[node name="Crate2" parent="Crates" instance=ExtResource("7_ysvib")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -36.5, 4, -3.5)
 
 [node name="LightTiles" parent="." instance=ExtResource("5_45054")]
 
@@ -158,7 +174,7 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -29.276, 3, -14)
 size = Vector3(31, 1, 19.5)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="LightTiles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 10, -1.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -1.75)
 size = Vector3(4, 1, 29.5)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="LightTiles"]
@@ -194,20 +210,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.3415, 9.5, -7.24056)
 radius = 2.0
 height = 11.0
 
-[node name="CeilingLight" parent="." instance=ExtResource("4_ln3rt")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -20.5, 7, -14)
-light_range = 5.0
-max_light_energy = 0.5
-min_light_energy = 0.1
+[node name="NarrationAreas" type="Node" parent="."]
 
-[node name="Crate" parent="." instance=ExtResource("7_ysvib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5, 4, -2)
+[node name="NarrateArea" parent="." instance=ExtResource("8_sms6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 8)
+audio = ExtResource("9_ahmnh")
+subtitle = "Ah shit. This nightmare again!"
 
-[node name="Crate3" parent="." instance=ExtResource("7_ysvib")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -35.5, 4, -2.75913)
-
-[node name="Crate4" parent="." instance=ExtResource("7_ysvib")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -36.5, 5, -2.75913)
-
-[node name="Crate2" parent="." instance=ExtResource("7_ysvib")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -36.5, 4, -3.5)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NarrateArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -0.5)
+shape = SubResource("BoxShape3D_72nmm")

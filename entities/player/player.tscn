@@ -321,3 +321,9 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("15_kj237")
 script = ExtResource("16_e01ef")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="NarrationStream" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+bus = &"Narration"
