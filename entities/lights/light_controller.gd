@@ -6,6 +6,11 @@ extends Node3D
 
 @export_category("Flickering")
 @export var flickering_enabled: bool = true
+@export_range(0, 50, 0.5) var light_range: float = 5.0:
+	set(new):
+		light_range = new
+		light_node.omni_range = light_range
+
 @export_range(0, 10, 0.05) var max_light_energy: float = 2.0
 @export_range(0, 10, 0.05) var min_light_energy: float = 0.6
 

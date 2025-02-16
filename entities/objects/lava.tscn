@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2l3ykspctylx"]
+
+[ext_resource type="PackedScene" uid="uid://ck4dhou3knhrh" path="res://entities/objects/dead_zone.tscn" id="2_38jyi"]
+[ext_resource type="Script" path="res://scripts/lava.gd" id="2_kpbi6"]
+[ext_resource type="Shader" path="res://entities/objects/lava.gdshader" id="2_onlf2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sse26"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b5nbl"]
+seamless = true
+noise = SubResource("FastNoiseLite_sse26")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jm1bh"]
+render_priority = 0
+shader = ExtResource("2_onlf2")
+shader_parameter/timeScaleFactor = 0.04
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_b5nbl")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0p3f1"]
+material = SubResource("ShaderMaterial_jm1bh")
+size = Vector2(200, 200)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q3elw"]
+
+[node name="Lava" type="MeshInstance3D"]
+mesh = SubResource("PlaneMesh_0p3f1")
+script = ExtResource("2_kpbi6")
+
+[node name="DeadZone" parent="." instance=ExtResource("2_38jyi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeadZone"]
+shape = SubResource("WorldBoundaryShape3D_q3elw")

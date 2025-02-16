@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkk5x6t0exvv2"]
+
+[ext_resource type="Material" uid="uid://dmi5lldjivl8p" path="res://resources/light_tile.tres" id="1_8sdlu"]
+
+[node name="LightTiles" type="CSGCombiner3D"]
+material_override = ExtResource("1_8sdlu")
+use_collision = true
+collision_layer = 4
