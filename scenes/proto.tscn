@@ -247,21 +247,17 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29.5,
 
 [node name="CeilingLight" parent="Lights" instance=ExtResource("13_g134h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 3.5, -0.883707)
-light_range = null
 
 [node name="CeilingLight2" parent="Lights" instance=ExtResource("13_g134h")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -27.5, 5.5, -1.88371)
-light_range = null
 
 [node name="CeilingLight5" parent="Lights" instance=ExtResource("13_g134h")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -16.5, 4.5, -2)
-light_range = null
 max_light_energy = 0.5
 min_light_energy = 0.1
 
 [node name="CeilingLight4" parent="Lights" instance=ExtResource("13_g134h")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -30.5, 4, -12.3837)
-light_range = null
 max_light_energy = 0.7
 min_light_energy = 0.1
 
@@ -281,7 +277,6 @@ omni_range = 42.312
 
 [node name="CeilingLight3" parent="Lights" instance=ExtResource("13_g134h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 6.5, -23)
-light_range = null
 
 [node name="Crate" parent="Lights" instance=ExtResource("14_riwim")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 1.5, 2)

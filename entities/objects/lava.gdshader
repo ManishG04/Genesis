@@ -28,7 +28,7 @@ float flow(vec2 p) {
     float z = 2.0;
     float rz = 0.0;
     vec2 bp = p;
-    
+
     for (float i = 1.0; i < 7.0; ++i) {
         p += localTime() * 0.6;
         bp += localTime() * 1.9;
@@ -49,7 +49,7 @@ void fragment() {
     float rz = flow(p);
     vec3 col = vec3(0.2, 0.07, 0.01) / rz;
     col = pow(col, vec3(1.4));
-    
+
     ALBEDO = col;
     EMISSION = col * 2.0; // Increase emission value
 }

@@ -17,4 +17,4 @@ func _on_body_entered(body: Node3D) -> void:
 			return
 		done = true
 		for i in len(audio_list):
-			body.say(audio_list[i], subtitle_list[i])
+			await body.say(audio_list[i], subtitle_list[i])

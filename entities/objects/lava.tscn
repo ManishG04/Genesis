@@ -19,7 +19,7 @@ shader_parameter/noise_texture = SubResource("NoiseTexture2D_b5nbl")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0p3f1"]
 material = SubResource("ShaderMaterial_jm1bh")
-size = Vector2(200, 200)
+size = Vector2(500, 500)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q3elw"]
 

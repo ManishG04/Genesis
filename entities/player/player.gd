@@ -172,14 +172,17 @@ func _on_update_stamina(new: float):
 func scare(trauma: float = 10.0):
 	%ShakeableCameraHolder.add_trauma(trauma)
 
+# MUST BE AWAITED
 func say(audio_stream: AudioStream, subtitle: String):
 	narrations.push_back(audio_stream)
-	while len(narrations):
+	while len(narrations) > 0:
 		#WAIT
 		if narration_stream.playing:
 			await narration_stream.finished
 			
 		#PLAY
+		assert(len(narrations) > 0, "Did you forget to await this `say` function?")
+		
 		var curr_stream = narrations[0]
 		narration_stream.stream = curr_stream
 		narration_stream.play()
