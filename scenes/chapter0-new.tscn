@@ -1,6 +1,5 @@
 [gd_scene load_steps=17 format=3 uid="uid://bku2jnrycv405"]
 
-[ext_resource type="PackedScene" uid="uid://c2p5q7c38r47u" path="res://assets/models/chapters/chapter0.blend" id="1_2jkw3"]
 [ext_resource type="PackedScene" uid="uid://ysripv4mvk5" path="res://entities/lights/ceiling_light.tscn" id="2_n1gbu"]
 [ext_resource type="PackedScene" uid="uid://dsjm6u2ixagqh" path="res://entities/door/door.tscn" id="3_oeka3"]
 [ext_resource type="PackedScene" uid="uid://dopuukxt8g7ej" path="res://entities/player/player.tscn" id="3_otxft"]
@@ -14,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bjiieuqqfwx4e" path="res://assets/audio/grab.mp3" id="11_4hucy"]
 [ext_resource type="AudioStream" uid="uid://cotriqpw0n830" path="res://assets/audio/lame.mp3" id="12_63o3s"]
 [ext_resource type="AudioStream" uid="uid://btblg52x04fsh" path="res://assets/audio/rid.mp3" id="13_5l6sm"]
+[ext_resource type="PackedScene" uid="uid://bc3h2t3a48tka" path="res://maps/chapter_0_map.tscn" id="15_wixrp"]
 
 [sub_resource type="Environment" id="Environment_aqkfm"]
 background_mode = 1
@@ -30,8 +30,6 @@ fog_density = 0.1
 size = Vector3(2.5, 2.5, 5)
 
 [node name="Chapter0-new" type="Node3D"]
-
-[node name="chapter0" parent="." instance=ExtResource("1_2jkw3")]
 
 [node name="Doors" type="Node" parent="."]
 
@@ -93,7 +91,7 @@ max_light_energy = 0.2
 min_light_energy = 0.1
 
 [node name="Player" parent="." instance=ExtResource("3_otxft")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 33)
 
 [node name="Lava" parent="." instance=ExtResource("4_ypupp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17, 0)
@@ -157,3 +155,11 @@ shape = SubResource("BoxShape3D_7wktn")
 [node name="FloorButton" parent="." node_paths=PackedStringArray("activatable") instance=ExtResource("10_8cegn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 9, -24)
 activatable = NodePath("../Doors/Door3")
+
+[node name="chapter0map" parent="." instance=ExtResource("15_wixrp")]
+
+[node name="CeilingLight" parent="." instance=ExtResource("2_n1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 15, 34)
+light_range = 19.0
+max_light_energy = 4.6
+min_light_energy = 4.4

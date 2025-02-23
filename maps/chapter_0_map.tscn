@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc3h2t3a48tka"]
+
+[ext_resource type="PackedScene" uid="uid://c2p5q7c38r47u" path="res://assets/models/chapters/chapter0.blend" id="1_e28w1"]
+
+[node name="chapter0map" instance=ExtResource("1_e28w1")]
+
+[node name="StaticBody3D" parent="Cube_005_019" index="0"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="StaticBody3D" parent="Cube_005_023" index="0"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="StaticBody3D" parent="Cube_005_001" index="0"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="StaticBody3D" parent="Cube" index="0"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="StaticBody3D" parent="Cube_001" index="0"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="StaticBody3D" parent="Cube-col_001" index="0"]
+collision_layer = 4
+collision_mask = 4
