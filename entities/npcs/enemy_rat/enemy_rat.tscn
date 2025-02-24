@@ -342,7 +342,6 @@ blackboard_plan = SubResource("BlackboardPlan_dm50m")
 target_desired_distance = 2.0
 simplify_epsilon = 1.0
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="AttackArea" type="Area3D" parent="."]
 
