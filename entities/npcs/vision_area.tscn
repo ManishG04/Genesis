@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://crj47450wesx7"]
+
+[ext_resource type="Script" path="res://scripts/vision_area.gd" id="1_wg2cw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y6nlq"]
+radius = 8.5
+
+[node name="VisionArea" type="Area3D"]
+script = ExtResource("1_wg2cw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_y6nlq")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+target_position = Vector3(0, 0, -100)
+collision_mask = 7
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

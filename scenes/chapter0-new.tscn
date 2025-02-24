@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bku2jnrycv405"]
+[gd_scene load_steps=19 format=3 uid="uid://bku2jnrycv405"]
 
 [ext_resource type="PackedScene" uid="uid://ysripv4mvk5" path="res://entities/lights/ceiling_light.tscn" id="2_n1gbu"]
 [ext_resource type="PackedScene" uid="uid://dsjm6u2ixagqh" path="res://entities/door/door.tscn" id="3_oeka3"]
@@ -13,7 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://bjiieuqqfwx4e" path="res://assets/audio/grab.mp3" id="11_4hucy"]
 [ext_resource type="AudioStream" uid="uid://cotriqpw0n830" path="res://assets/audio/lame.mp3" id="12_63o3s"]
 [ext_resource type="AudioStream" uid="uid://btblg52x04fsh" path="res://assets/audio/rid.mp3" id="13_5l6sm"]
+[ext_resource type="PackedScene" uid="uid://c5tjnbmi4fy1v" path="res://entities/npcs/enemy_rat/enemy_rat.tscn" id="15_aa5pj"]
 [ext_resource type="PackedScene" uid="uid://bc3h2t3a48tka" path="res://maps/chapter_0_map.tscn" id="15_wixrp"]
+[ext_resource type="PackedScene" uid="uid://davw8r114scqg" path="res://entities/npcs/crow/crow.tscn" id="16_toe1d"]
 
 [sub_resource type="Environment" id="Environment_aqkfm"]
 background_mode = 1
@@ -160,6 +162,33 @@ activatable = NodePath("../Doors/Door3")
 
 [node name="CeilingLight" parent="." instance=ExtResource("2_n1gbu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 15, 34)
-light_range = 19.0
+light_range = 42.0
 max_light_energy = 4.6
-min_light_energy = 4.4
+min_light_energy = 4.0
+
+[node name="CeilingLight2" parent="." instance=ExtResource("2_n1gbu")]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -8, 7.5, 42)
+light_range = 42.0
+max_light_energy = 4.6
+min_light_energy = 4.0
+
+[node name="CeilingLight3" parent="." instance=ExtResource("2_n1gbu")]
+transform = Transform3D(-1, 8.74228e-08, 2.6054e-15, 0, 2.98023e-08, -1, -8.74228e-08, -1, -2.98023e-08, -8, 7.5, 32)
+light_range = 42.0
+max_light_energy = 4.6
+min_light_energy = 4.0
+
+[node name="EnemyRat" parent="." instance=ExtResource("15_aa5pj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3, 37)
+
+[node name="Crow" parent="." instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 35)
+
+[node name="Crow2" parent="." instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 37.5)
+
+[node name="Crow3" parent="." instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 3, 39.5)
+
+[node name="Crow4" parent="." instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 3, 34.5)

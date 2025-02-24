@@ -1,0 +1,59 @@
+[gd_resource type="BehaviorTree" load_steps=15 format=3 uid="uid://dif6s4oool5vu"]
+
+[ext_resource type="Script" path="res://ai/tasks/navigate_to_point.gd" id="1_sqhha"]
+[ext_resource type="Script" path="res://ai/tasks/chase_target.gd" id="1_w8tkw"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ahnk5"]
+var/target_var/name = &"target_var"
+var/target_var/type = 24
+var/target_var/hint = 0
+var/target_var/hint_string = "Attack target for the character"
+
+[sub_resource type="BBVariant" id="BBVariant_s6yv1"]
+saved_value = null
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_xtrsg"]
+variable = &"target_var"
+check_type = 5
+value = SubResource("BBVariant_s6yv1")
+
+[sub_resource type="BTAction" id="BTAction_tlh7s"]
+script = ExtResource("1_w8tkw")
+tolerance = 3.0
+
+[sub_resource type="BBNode" id="BBNode_d5ufh"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_0r2nb"]
+node = SubResource("BBNode_d5ufh")
+method = &"attack"
+
+[sub_resource type="BTCooldown" id="BTCooldown_8b4xb"]
+duration = 1.0
+start_cooled = true
+children = [SubResource("BTCallMethod_0r2nb")]
+
+[sub_resource type="BTSequence" id="BTSequence_iyt7u"]
+custom_name = "Attack Player Sequence"
+children = [SubResource("BTCheckVar_xtrsg"), SubResource("BTAction_tlh7s"), SubResource("BTCooldown_8b4xb")]
+
+[sub_resource type="BTAction" id="BTAction_c8mvy"]
+script = ExtResource("1_sqhha")
+max_dist = 10.0
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_oop41"]
+min_duration = 2.0
+max_duration = 4.0
+
+[sub_resource type="BTSequence" id="BTSequence_m413f"]
+custom_name = "Find Targets Sequence"
+children = [SubResource("BTAction_c8mvy"), SubResource("BTRandomWait_oop41")]
+
+[sub_resource type="BTDynamicSelector" id="BTDynamicSelector_2nq5t"]
+custom_name = "EnemyAI"
+children = [SubResource("BTSequence_iyt7u"), SubResource("BTSequence_m413f")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_ahnk5")
+root_task = SubResource("BTDynamicSelector_2nq5t")
