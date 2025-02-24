@@ -188,6 +188,7 @@ unique_name_in_owner = true
 [node name="HandSprite" type="Sprite3D" parent="Head/ShakeableCameraHolder/Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845, -0.365, -0.81)
+sorting_offset = 2.0
 pixel_size = 0.004
 billboard = 1
 shaded = true

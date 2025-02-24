@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bku2jnrycv405"]
+[gd_scene load_steps=20 format=3 uid="uid://bku2jnrycv405"]
 
 [ext_resource type="PackedScene" uid="uid://ysripv4mvk5" path="res://entities/lights/ceiling_light.tscn" id="2_n1gbu"]
 [ext_resource type="PackedScene" uid="uid://dsjm6u2ixagqh" path="res://entities/door/door.tscn" id="3_oeka3"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c5tjnbmi4fy1v" path="res://entities/npcs/enemy_rat/enemy_rat.tscn" id="15_aa5pj"]
 [ext_resource type="PackedScene" uid="uid://bc3h2t3a48tka" path="res://maps/chapter_0_map.tscn" id="15_wixrp"]
 [ext_resource type="PackedScene" uid="uid://davw8r114scqg" path="res://entities/npcs/crow/crow.tscn" id="16_toe1d"]
+[ext_resource type="PackedScene" uid="uid://ct5bv4mds7sx6" path="res://entities/npcs/spider/spider.tscn" id="17_kpyp7"]
 
 [sub_resource type="Environment" id="Environment_aqkfm"]
 background_mode = 1
@@ -184,11 +185,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3, 37)
 [node name="Crow" parent="." instance=ExtResource("16_toe1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 35)
 
-[node name="Crow2" parent="." instance=ExtResource("16_toe1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 37.5)
-
-[node name="Crow3" parent="." instance=ExtResource("16_toe1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 3, 39.5)
-
-[node name="Crow4" parent="." instance=ExtResource("16_toe1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 3, 34.5)
+[node name="Spider" parent="." instance=ExtResource("17_kpyp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3, 38.5)

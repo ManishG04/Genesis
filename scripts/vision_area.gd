@@ -11,7 +11,7 @@ var within_bounds_target: Player
 
 func _ready() -> void:
 	blackboard = bt_player.blackboard
-	blackboard.bind_var_to_property("target_var", self, "target")
+	blackboard.bind_var_to_property("target_var", self, "target", true)
 	body_entered.connect(_on_vision_area_body_entered)
 	body_exited.connect(_on_vision_area_body_exited)
 	timer.timeout.connect(_on_timer_timeout)

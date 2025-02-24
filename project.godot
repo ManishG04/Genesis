@@ -140,7 +140,9 @@ escape={
 [layer_names]
 
 3d_physics/layer_1="player"
+3d_navigation/layer_1="grounded"
 3d_physics/layer_2="aim-able"
+3d_navigation/layer_2="flying"
 3d_physics/layer_3="walls"
 3d_physics/layer_4="aim-able-non-player"
 3d_physics/layer_5="projectiles"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://davw8r114scqg"]
+[gd_scene load_steps=38 format=3 uid="uid://davw8r114scqg"]
 
 [ext_resource type="Script" path="res://entities/npcs/enemy.gd" id="1_wpduo"]
 [ext_resource type="Texture2D" uid="uid://d10iagsohi6ts" path="res://assets/textures/crow/attack.png" id="2_1wtty"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://begtqy1xkstgy" path="res://assets/textures/crow/hurt.png" id="4_dkupt"]
 [ext_resource type="Texture2D" uid="uid://fexxlmi13smw" path="res://assets/textures/crow/idle.png" id="5_yuyv4"]
 [ext_resource type="Texture2D" uid="uid://h251b0hwch33" path="res://assets/textures/crow/fly.png" id="6_rlqua"]
-[ext_resource type="BehaviorTree" uid="uid://dif6s4oool5vu" path="res://entities/npcs/enemy_rat/enemy_rat_ai.tres" id="8_xqge8"]
+[ext_resource type="BehaviorTree" uid="uid://cy68esun2j15w" path="res://entities/npcs/crow/crow_ai.tres" id="8_5885n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nps8m"]
+radius = 7.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5s4r"]
 atlas = ExtResource("2_1wtty")
@@ -219,17 +222,25 @@ animations = [{
 [node name="Crow" type="CharacterBody3D" node_paths=PackedStringArray("navigation", "animated_sprite")]
 collision_layer = 2
 collision_mask = 15
+motion_mode = 1
+up_direction = Vector3(0, -1, 0)
 script = ExtResource("1_wpduo")
 navigation = NodePath("NavigationAgent3D")
 animated_sprite = NodePath("AnimatedSprite3D")
+grounded = false
 
 [node name="VisionArea" parent="." node_paths=PackedStringArray("bt_player") instance=ExtResource("2_lmlcg")]
 bt_player = NodePath("../BTPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_nps8m")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 pixel_size = 0.05
 billboard = 1
+shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_t3igo")
 animation = &"hurt"
@@ -241,7 +252,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_6hr2k")
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("8_xqge8")
+behavior_tree = ExtResource("8_5885n")
 blackboard_plan = SubResource("BlackboardPlan_66axw")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+use_3d_avoidance = true
+debug_enabled = true

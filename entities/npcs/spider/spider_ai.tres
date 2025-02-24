@@ -1,13 +1,13 @@
-[gd_resource type="BehaviorTree" load_steps=15 format=3 uid="uid://dif6s4oool5vu"]
+[gd_resource type="BehaviorTree" load_steps=15 format=3 uid="uid://bry2xgru776ug"]
 
-[ext_resource type="Script" path="res://ai/tasks/navigate_to_point.gd" id="1_sqhha"]
-[ext_resource type="Script" path="res://ai/tasks/chase_target.gd" id="1_w8tkw"]
+[ext_resource type="Script" path="res://ai/tasks/chase_target.gd" id="1_0qdqi"]
+[ext_resource type="Script" path="res://ai/tasks/navigate_to_point.gd" id="2_i7wmw"]
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_ahnk5"]
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_6hrbj"]
 var/target_var/name = &"target_var"
 var/target_var/type = 24
 var/target_var/hint = 0
-var/target_var/hint_string = "Attack target for the character"
+var/target_var/hint_string = "Target Object to chase"
 
 [sub_resource type="BBVariant" id="BBVariant_s6yv1"]
 saved_value = null
@@ -19,7 +19,7 @@ check_type = 5
 value = SubResource("BBVariant_s6yv1")
 
 [sub_resource type="BTAction" id="BTAction_tlh7s"]
-script = ExtResource("1_w8tkw")
+script = ExtResource("1_0qdqi")
 tolerance = 3.0
 
 [sub_resource type="BBNode" id="BBNode_d5ufh"]
@@ -40,7 +40,7 @@ custom_name = "Attack Player Sequence"
 children = [SubResource("BTCheckVar_xtrsg"), SubResource("BTAction_tlh7s"), SubResource("BTCooldown_8b4xb")]
 
 [sub_resource type="BTAction" id="BTAction_c8mvy"]
-script = ExtResource("1_sqhha")
+script = ExtResource("2_i7wmw")
 max_dist = 10.0
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_oop41"]
@@ -56,5 +56,5 @@ custom_name = "EnemyAI"
 children = [SubResource("BTSequence_iyt7u"), SubResource("BTSequence_m413f")]
 
 [resource]
-blackboard_plan = SubResource("BlackboardPlan_ahnk5")
+blackboard_plan = SubResource("BlackboardPlan_6hrbj")
 root_task = SubResource("BTDynamicSelector_2nq5t")
