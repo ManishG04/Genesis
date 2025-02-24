@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q21b4q2wndr2"
-path.s3tc="res://.godot/imported/Hit_Body_180.png-b445b682fab654fc8b00a84a010f8390.s3tc.ctex"
+path.bptc="res://.godot/imported/Hit_Body_180.png-b445b682fab654fc8b00a84a010f8390.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,12 +12,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/spider/Hit_Body_180.png"
-dest_files=["res://.godot/imported/Hit_Body_180.png-b445b682fab654fc8b00a84a010f8390.s3tc.ctex"]
+dest_files=["res://.godot/imported/Hit_Body_180.png-b445b682fab654fc8b00a84a010f8390.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

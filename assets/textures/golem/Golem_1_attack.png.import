@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyeg0h3l3qtm"
-path.bptc="res://.godot/imported/Run_Body_180.png-829ed0cf60db96a86b532d1a9baf1cb1.bptc.ctex"
+uid="uid://cnfuv7bisnu4a"
+path.bptc="res://.godot/imported/Golem_1_attack.png-55cb21dc490f29f268c539c547041d70.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/spider/Run_Body_180.png"
-dest_files=["res://.godot/imported/Run_Body_180.png-829ed0cf60db96a86b532d1a9baf1cb1.bptc.ctex"]
+source_file="res://assets/textures/golem/Golem_1_attack.png"
+dest_files=["res://.godot/imported/Golem_1_attack.png-55cb21dc490f29f268c539c547041d70.bptc.ctex"]
 
 [params]
 

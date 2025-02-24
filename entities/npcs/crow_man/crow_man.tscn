@@ -1,0 +1,206 @@
+[gd_scene load_steps=30 format=3 uid="uid://duqfi25ltmon0"]
+
+[ext_resource type="Script" path="res://entities/npcs/grounded_enemy.gd" id="1_yd03g"]
+[ext_resource type="Texture2D" uid="uid://d18428mb7nitc" path="res://assets/textures/crow_man/crow_attack.png" id="2_ojdfq"]
+[ext_resource type="Texture2D" uid="uid://c7sf5bxrnqr0x" path="res://assets/textures/crow_man/crow_death1.png" id="3_vb0v5"]
+[ext_resource type="Texture2D" uid="uid://drfgfv5t0mfdt" path="res://assets/textures/crow_man/crow_idle.png" id="4_17vyk"]
+[ext_resource type="Texture2D" uid="uid://27b0f75ao7jk" path="res://assets/textures/crow_man/crow_walk.png" id="5_syory"]
+[ext_resource type="BehaviorTree" uid="uid://dba20m1m70py6" path="res://entities/npcs/crow_man/crow_man_ai.tres" id="6_0ea5g"]
+[ext_resource type="PackedScene" uid="uid://crj47450wesx7" path="res://entities/npcs/vision_area.tscn" id="7_8fcvp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4v7w"]
+atlas = ExtResource("2_ojdfq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mmrt"]
+atlas = ExtResource("2_ojdfq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at1i4"]
+atlas = ExtResource("2_ojdfq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd151"]
+atlas = ExtResource("2_ojdfq")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpedf"]
+atlas = ExtResource("2_ojdfq")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw7fl"]
+atlas = ExtResource("3_vb0v5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng2h5"]
+atlas = ExtResource("3_vb0v5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr0qp"]
+atlas = ExtResource("3_vb0v5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpjmq"]
+atlas = ExtResource("3_vb0v5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a46u"]
+atlas = ExtResource("3_vb0v5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq7l6"]
+atlas = ExtResource("4_17vyk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbwgh"]
+atlas = ExtResource("4_17vyk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f6t1"]
+atlas = ExtResource("4_17vyk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoiqa"]
+atlas = ExtResource("4_17vyk")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olh0f"]
+atlas = ExtResource("5_syory")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ubqc"]
+atlas = ExtResource("5_syory")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc15r"]
+atlas = ExtResource("5_syory")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf13d"]
+atlas = ExtResource("5_syory")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edgfg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4v7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mmrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at1i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd151")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpedf")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw7fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng2h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr0qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpjmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a46u")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq7l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbwgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f6t1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoiqa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olh0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ubqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uc15r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf13d")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ialmd"]
+radius = 0.7
+height = 3.0
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_dm50m"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ia7qm"]
+radius = 7.0
+
+[node name="CrowMan" type="CharacterBody3D" node_paths=PackedStringArray("navigation", "animated_sprite")]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_yd03g")
+navigation = NodePath("NavigationAgent3D")
+animated_sprite = NodePath("AnimatedSprite3D")
+JUMP_SPEED = 0.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+pixel_size = 0.1
+billboard = 2
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_edgfg")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.292603
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+shape = SubResource("CapsuleShape3D_ialmd")
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("6_0ea5g")
+blackboard_plan = SubResource("BlackboardPlan_dm50m")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+simplify_epsilon = 1.0
+avoidance_enabled = true
+
+[node name="VisionArea" parent="." node_paths=PackedStringArray("bt_player") instance=ExtResource("7_8fcvp")]
+bt_player = NodePath("../BTPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_ia7qm")

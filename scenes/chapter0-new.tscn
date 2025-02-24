@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bku2jnrycv405"]
+[gd_scene load_steps=22 format=3 uid="uid://bku2jnrycv405"]
 
 [ext_resource type="PackedScene" uid="uid://ysripv4mvk5" path="res://entities/lights/ceiling_light.tscn" id="2_n1gbu"]
 [ext_resource type="PackedScene" uid="uid://dsjm6u2ixagqh" path="res://entities/door/door.tscn" id="3_oeka3"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://bc3h2t3a48tka" path="res://maps/chapter_0_map.tscn" id="15_wixrp"]
 [ext_resource type="PackedScene" uid="uid://davw8r114scqg" path="res://entities/npcs/crow/crow.tscn" id="16_toe1d"]
 [ext_resource type="PackedScene" uid="uid://ct5bv4mds7sx6" path="res://entities/npcs/spider/spider.tscn" id="17_kpyp7"]
+[ext_resource type="PackedScene" uid="uid://f15v03mr4v8y" path="res://entities/npcs/golem/golem.tscn" id="18_vso04"]
+[ext_resource type="PackedScene" uid="uid://duqfi25ltmon0" path="res://entities/npcs/crow_man/crow_man.tscn" id="19_gxh3p"]
 
 [sub_resource type="Environment" id="Environment_aqkfm"]
 background_mode = 1
@@ -228,3 +230,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3, 44.5)
 
 [node name="Spider" parent="Crows" instance=ExtResource("17_kpyp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 47.5)
+
+[node name="Golem" parent="Crows" instance=ExtResource("18_vso04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3, 45)
+
+[node name="CrowMan" parent="Crows" instance=ExtResource("19_gxh3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 3, 44.5)

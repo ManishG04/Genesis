@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyeg0h3l3qtm"
-path.bptc="res://.godot/imported/Run_Body_180.png-829ed0cf60db96a86b532d1a9baf1cb1.bptc.ctex"
+uid="uid://dd0n6mrdhe181"
+path.bptc="res://.godot/imported/Golem_1_die.png-ada2a9fa9a1b874c033fcaa4fd3f3aa7.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/spider/Run_Body_180.png"
-dest_files=["res://.godot/imported/Run_Body_180.png-829ed0cf60db96a86b532d1a9baf1cb1.bptc.ctex"]
+source_file="res://assets/textures/golem/Golem_1_die.png"
+dest_files=["res://.godot/imported/Golem_1_die.png-ada2a9fa9a1b874c033fcaa4fd3f3aa7.bptc.ctex"]
 
 [params]
 

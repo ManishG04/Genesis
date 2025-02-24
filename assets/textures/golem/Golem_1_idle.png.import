@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyeg0h3l3qtm"
-path.bptc="res://.godot/imported/Run_Body_180.png-829ed0cf60db96a86b532d1a9baf1cb1.bptc.ctex"
+uid="uid://b6xhfop5g2g7o"
+path.bptc="res://.godot/imported/Golem_1_idle.png-95b1066a5bb68f0a13b97aec30d1e7d3.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/spider/Run_Body_180.png"
-dest_files=["res://.godot/imported/Run_Body_180.png-829ed0cf60db96a86b532d1a9baf1cb1.bptc.ctex"]
+source_file="res://assets/textures/golem/Golem_1_idle.png"
+dest_files=["res://.godot/imported/Golem_1_idle.png-95b1066a5bb68f0a13b97aec30d1e7d3.bptc.ctex"]
 
 [params]
 
