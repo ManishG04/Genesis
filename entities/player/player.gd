@@ -92,7 +92,7 @@ func _handle_debug_movement(delta: float) -> void:
 	# Vertical movement in debug mode
 	if Input.is_action_pressed("jump"):
 		direction.y = 1.0
-	if Input.is_action_pressed("sprint"):  # You'll need to add this action in the input map
+	if Input.is_action_pressed("sprint"): 
 		direction.y = -1.0
 	
 	# Apply movement in all directions

@@ -1,6 +1,6 @@
 [gd_scene load_steps=145 format=3 uid="uid://ct5bv4mds7sx6"]
 
-[ext_resource type="Script" path="res://entities/npcs/enemy.gd" id="1_xv2vs"]
+[ext_resource type="Script" path="res://entities/npcs/grounded_enemy.gd" id="1_xv2vs"]
 [ext_resource type="PackedScene" uid="uid://crj47450wesx7" path="res://entities/npcs/vision_area.tscn" id="2_pma2v"]
 [ext_resource type="Texture2D" uid="uid://t88fx550s1js" path="res://assets/textures/spider/Attack1_Body_180.png" id="3_7yc7c"]
 [ext_resource type="Texture2D" uid="uid://pnefbd7l36y8" path="res://assets/textures/spider/Die2_Body_180.png" id="4_54oev"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dnyeg0h3l3qtm" path="res://assets/textures/spider/Run_Body_180.png" id="7_vxrtr"]
 [ext_resource type="BehaviorTree" uid="uid://bry2xgru776ug" path="res://entities/npcs/spider/spider_ai.tres" id="8_bwjmc"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_r404n"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_qi05f"]
 radius = 15.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfnta"]
@@ -969,21 +969,19 @@ animations = [{
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_66axw"]
 
 [node name="Spider" type="CharacterBody3D" node_paths=PackedStringArray("navigation", "animated_sprite")]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 15
-motion_mode = 1
 up_direction = Vector3(0, -1, 0)
 script = ExtResource("1_xv2vs")
 navigation = NodePath("NavigationAgent3D")
 animated_sprite = NodePath("AnimatedSprite3D")
-grounded = false
 
 [node name="VisionArea" parent="." node_paths=PackedStringArray("bt_player") instance=ExtResource("2_pma2v")]
 bt_player = NodePath("../BTPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CylinderShape3D_r404n")
+shape = SubResource("SphereShape3D_qi05f")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
@@ -1006,6 +1004,7 @@ behavior_tree = ExtResource("8_bwjmc")
 blackboard_plan = SubResource("BlackboardPlan_66axw")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
 avoidance_enabled = true
 use_3d_avoidance = true
 debug_enabled = true

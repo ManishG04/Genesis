@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://davw8r114scqg"]
 
-[ext_resource type="Script" path="res://entities/npcs/enemy.gd" id="1_wpduo"]
+[ext_resource type="Script" path="res://entities/npcs/flying_enemy.gd" id="1_r5rdy"]
 [ext_resource type="Texture2D" uid="uid://d10iagsohi6ts" path="res://assets/textures/crow/attack.png" id="2_1wtty"]
 [ext_resource type="PackedScene" uid="uid://crj47450wesx7" path="res://entities/npcs/vision_area.tscn" id="2_lmlcg"]
 [ext_resource type="Texture2D" uid="uid://dw2xg2lmg45e2" path="res://assets/textures/crow/death.png" id="3_1k7a8"]
@@ -219,15 +219,13 @@ animations = [{
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_66axw"]
 
-[node name="Crow" type="CharacterBody3D" node_paths=PackedStringArray("navigation", "animated_sprite")]
-collision_layer = 2
+[node name="Crow" type="CharacterBody3D" node_paths=PackedStringArray("animated_sprite")]
+collision_layer = 8
 collision_mask = 15
 motion_mode = 1
 up_direction = Vector3(0, -1, 0)
-script = ExtResource("1_wpduo")
-navigation = NodePath("NavigationAgent3D")
+script = ExtResource("1_r5rdy")
 animated_sprite = NodePath("AnimatedSprite3D")
-grounded = false
 
 [node name="VisionArea" parent="." node_paths=PackedStringArray("bt_player") instance=ExtResource("2_lmlcg")]
 bt_player = NodePath("../BTPlayer")

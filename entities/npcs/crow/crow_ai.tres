@@ -20,7 +20,7 @@ value = SubResource("BBVariant_s6yv1")
 
 [sub_resource type="BTAction" id="BTAction_tlh7s"]
 script = ExtResource("1_3pnxa")
-tolerance = 3.0
+flying_tolerance = 5.0
 
 [sub_resource type="BBNode" id="BBNode_d5ufh"]
 saved_value = NodePath(".")
@@ -42,6 +42,7 @@ children = [SubResource("BTCheckVar_xtrsg"), SubResource("BTAction_tlh7s"), SubR
 [sub_resource type="BTAction" id="BTAction_c8mvy"]
 script = ExtResource("2_82j4u")
 max_dist = 10.0
+flying_tolerance = 2.0
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_oop41"]
 min_duration = 2.0

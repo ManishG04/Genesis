@@ -1,7 +1,5 @@
-class_name Enemy
-extends NPC
-
-#@export var attack_area: Area3D
+class_name FlyingEnemy
+extends FlyingNPC
 
 func _ready() -> void:
 	#attack_area.body_entered.connect(_on_attack_area_body_entered)
@@ -16,9 +14,7 @@ func attack():
 
 func _on_attack_area_body_entered(body: Node3D) -> void:
 	if body is not Player: return
-	attack()
-	print("ATTACK")
+	#attack()
 
 func _on_attack_area_body_exited(body: Node3D) -> void:
 	if body is not Player: return
-	print("STOP ATTACK")

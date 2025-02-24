@@ -1,6 +1,6 @@
 extends BTAction
 
-@export var tolerance: float = 3
+@export var flying_tolerance: float = 5
 
 var npc: NPC
 var target: Node3D
@@ -17,22 +17,28 @@ func _tick(delta: float) -> Status:
 	if not target:
 		npc.stop()
 		return FAILURE
-		
-	npc.navigation.target_position = pick_destination()
 	
-		
+	if npc is GroundedNPC:
+		return grounded_chase(npc)
+	return flying_chase(npc)
+	
+func flying_chase(npc: FlyingNPC) -> Status:
+	var dest = pick_destination()
+	npc.move(dest, true)
+	if npc.global_position.distance_squared_to(dest) <= flying_tolerance:
+		return SUCCESS
+	return RUNNING
+	
+func grounded_chase(npc: GroundedNPC) -> Status:
+	npc.navigation.target_position = pick_destination()
 	if npc.navigation.is_navigation_finished():
 		npc.stop()
 		return SUCCESS
-	
 	if not npc.navigation.is_target_reachable():
 		npc.stop()
 		return FAILURE
-	
-	npc.move(true)
-	
+	npc.navigate(true)
 	return RUNNING
-	
 	
 func pick_destination() -> Vector3:
 	var new_pos = target.global_position

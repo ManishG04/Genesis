@@ -38,6 +38,10 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/AudioSub/plugin.cfg")
 
+[global_group]
+
+navigatable=""
+
 [gui]
 
 theme/custom_font="res://assets/fonts/C&C Red Alert [INET].ttf"
@@ -146,6 +150,7 @@ escape={
 3d_physics/layer_3="walls"
 3d_physics/layer_4="aim-able-non-player"
 3d_physics/layer_5="projectiles"
+3d_physics/layer_6="enemies"
 
 [physics]
 

@@ -94,7 +94,7 @@ max_light_energy = 0.2
 min_light_energy = 0.1
 
 [node name="Player" parent="." instance=ExtResource("3_otxft")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 7.5, 27.5)
 
 [node name="Lava" parent="." instance=ExtResource("4_ypupp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17, 0)
@@ -168,22 +168,16 @@ max_light_energy = 4.6
 min_light_energy = 4.0
 
 [node name="CeilingLight2" parent="." instance=ExtResource("2_n1gbu")]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, -8, 7.5, 42)
-light_range = 42.0
-max_light_energy = 4.6
-min_light_energy = 4.0
-
-[node name="CeilingLight3" parent="." instance=ExtResource("2_n1gbu")]
-transform = Transform3D(-1, 8.74228e-08, 2.6054e-15, 0, 2.98023e-08, -1, -8.74228e-08, -1, -2.98023e-08, -8, 7.5, 32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 15, 61)
 light_range = 42.0
 max_light_energy = 4.6
 min_light_energy = 4.0
 
 [node name="EnemyRat" parent="." instance=ExtResource("15_aa5pj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 6, 33.5)
 
 [node name="Crow" parent="." instance=ExtResource("16_toe1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 35)
 
 [node name="Spider" parent="." instance=ExtResource("17_kpyp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3, 38.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 6, 35)
