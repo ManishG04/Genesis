@@ -1,7 +1,8 @@
-[gd_resource type="BehaviorTree" load_steps=15 format=3 uid="uid://cy68esun2j15w"]
+[gd_resource type="BehaviorTree" load_steps=17 format=3 uid="uid://cy68esun2j15w"]
 
 [ext_resource type="Script" path="res://ai/tasks/chase_target.gd" id="1_3pnxa"]
 [ext_resource type="Script" path="res://ai/tasks/navigate_to_point.gd" id="2_82j4u"]
+[ext_resource type="Script" path="res://ai/tasks/fly_around_target.gd" id="2_g3vah"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_6hrbj"]
 var/target_var/name = &"target_var"
@@ -20,7 +21,13 @@ value = SubResource("BBVariant_s6yv1")
 
 [sub_resource type="BTAction" id="BTAction_tlh7s"]
 script = ExtResource("1_3pnxa")
-flying_tolerance = 5.0
+flying_tolerance = 10.0
+
+[sub_resource type="BTAction" id="BTAction_qi8v6"]
+script = ExtResource("2_g3vah")
+radius = 3.0
+speed = 2.0
+duration = 5.0
 
 [sub_resource type="BBNode" id="BBNode_d5ufh"]
 saved_value = NodePath(".")
@@ -37,7 +44,7 @@ children = [SubResource("BTCallMethod_0r2nb")]
 
 [sub_resource type="BTSequence" id="BTSequence_iyt7u"]
 custom_name = "Attack Player Sequence"
-children = [SubResource("BTCheckVar_xtrsg"), SubResource("BTAction_tlh7s"), SubResource("BTCooldown_8b4xb")]
+children = [SubResource("BTCheckVar_xtrsg"), SubResource("BTAction_tlh7s"), SubResource("BTAction_qi8v6"), SubResource("BTCooldown_8b4xb")]
 
 [sub_resource type="BTAction" id="BTAction_c8mvy"]
 script = ExtResource("2_82j4u")

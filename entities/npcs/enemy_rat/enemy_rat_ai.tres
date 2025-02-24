@@ -20,7 +20,7 @@ value = SubResource("BBVariant_s6yv1")
 
 [sub_resource type="BTAction" id="BTAction_tlh7s"]
 script = ExtResource("1_w8tkw")
-flying_tolerance = 5.0
+flying_tolerance = 10.0
 
 [sub_resource type="BBNode" id="BBNode_d5ufh"]
 saved_value = NodePath(".")

@@ -1,6 +1,6 @@
 extends BTAction
 
-@export var flying_tolerance: float = 5
+@export var flying_tolerance: float = 10
 
 var npc: NPC
 var target: Node3D

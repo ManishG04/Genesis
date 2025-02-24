@@ -173,11 +173,58 @@ light_range = 42.0
 max_light_energy = 4.6
 min_light_energy = 4.0
 
-[node name="EnemyRat" parent="." instance=ExtResource("15_aa5pj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 6, 33.5)
+[node name="Crows" type="Node" parent="."]
 
-[node name="Crow" parent="." instance=ExtResource("16_toe1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 35)
+[node name="Crow" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5.5, 35)
 
-[node name="Spider" parent="." instance=ExtResource("17_kpyp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 6, 35)
+[node name="Crow2" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 5.5, 37.5)
+
+[node name="Crow3" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 5.5, 35)
+
+[node name="Crow4" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 5.5, 37)
+
+[node name="Crow5" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7.5, 35)
+
+[node name="Crow6" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 7.5, 37.5)
+
+[node name="Crow7" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 7.5, 35)
+
+[node name="Crow8" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 7.5, 37)
+
+[node name="Crow9" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5.5, 30.5)
+
+[node name="Crow10" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 5.5, 33)
+
+[node name="Crow11" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 5.5, 30.5)
+
+[node name="Crow12" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 5.5, 32.5)
+
+[node name="Crow13" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7.5, 30.5)
+
+[node name="Crow14" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 7.5, 33)
+
+[node name="Crow15" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 7.5, 30.5)
+
+[node name="Crow16" parent="Crows" instance=ExtResource("16_toe1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 7.5, 32.5)
+
+[node name="EnemyRat" parent="Crows" instance=ExtResource("15_aa5pj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3, 44.5)
+
+[node name="Spider" parent="Crows" instance=ExtResource("17_kpyp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 47.5)

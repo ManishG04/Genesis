@@ -21,7 +21,6 @@ func move(target_pos: Vector3, sprint: bool = false):
 	pass
 
 func jump():
-	print("JUMP")
 	velocity.y += JUMP_SPEED
 	#direction.y = 1
 
