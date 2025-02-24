@@ -9,6 +9,11 @@ var/target_var/name = &"target_var"
 var/target_var/type = 24
 var/target_var/hint = 0
 var/target_var/hint_string = "Target Object to chase"
+var/is_target_close_var/name = &"is_target_close_var"
+var/is_target_close_var/type = 1
+var/is_target_close_var/value = false
+var/is_target_close_var/hint = 0
+var/is_target_close_var/hint_string = "Is target close enough for things like leaping"
 
 [sub_resource type="BBVariant" id="BBVariant_s6yv1"]
 saved_value = null

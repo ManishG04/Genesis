@@ -1,7 +1,9 @@
-[gd_resource type="BehaviorTree" load_steps=15 format=3 uid="uid://bry2xgru776ug"]
+[gd_resource type="BehaviorTree" load_steps=27 format=3 uid="uid://bry2xgru776ug"]
 
 [ext_resource type="Script" path="res://ai/tasks/chase_target.gd" id="1_0qdqi"]
+[ext_resource type="Script" path="res://ai/tasks/target_in_range.gd" id="2_csq83"]
 [ext_resource type="Script" path="res://ai/tasks/navigate_to_point.gd" id="2_i7wmw"]
+[ext_resource type="Script" path="res://ai/tasks/leap_to_target.gd" id="3_xonyi"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_6hrbj"]
 var/target_var/name = &"target_var"
@@ -20,7 +22,25 @@ value = SubResource("BBVariant_s6yv1")
 
 [sub_resource type="BTAction" id="BTAction_tlh7s"]
 script = ExtResource("1_0qdqi")
-flying_tolerance = 5.0
+flying_tolerance = 10.0
+
+[sub_resource type="BTCondition" id="BTCondition_qkuuw"]
+script = ExtResource("2_csq83")
+distance_min = 0.0
+distance_max = 10.0
+target_var = &"target_var"
+
+[sub_resource type="BTAction" id="BTAction_ofpb8"]
+script = ExtResource("3_xonyi")
+target_var = &"target_var"
+
+[sub_resource type="BBNode" id="BBNode_wm2gq"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_23tux"]
+node = SubResource("BBNode_wm2gq")
+method = &"stop"
 
 [sub_resource type="BBNode" id="BBNode_d5ufh"]
 saved_value = NodePath(".")
@@ -30,14 +50,32 @@ resource_name = "."
 node = SubResource("BBNode_d5ufh")
 method = &"attack"
 
-[sub_resource type="BTCooldown" id="BTCooldown_8b4xb"]
-duration = 1.0
-start_cooled = true
-children = [SubResource("BTCallMethod_0r2nb")]
+[sub_resource type="BTWait" id="BTWait_blfda"]
+
+[sub_resource type="BTSequence" id="BTSequence_e534i"]
+custom_name = "Leap on target"
+children = [SubResource("BTCondition_qkuuw"), SubResource("BTAction_ofpb8"), SubResource("BTCallMethod_23tux"), SubResource("BTCallMethod_0r2nb"), SubResource("BTWait_blfda")]
+
+[sub_resource type="BBNode" id="BBNode_cc5qj"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_mkrq4"]
+node = SubResource("BBNode_cc5qj")
+method = &"attack"
+
+[sub_resource type="BTSequence" id="BTSequence_fqknf"]
+custom_name = "Vanilla Attack"
+children = [SubResource("BTCallMethod_mkrq4")]
+
+[sub_resource type="BTDynamicSelector" id="BTDynamicSelector_yweh8"]
+children = [SubResource("BTSequence_e534i"), SubResource("BTSequence_fqknf")]
+
+[sub_resource type="BTWait" id="BTWait_c8fpf"]
 
 [sub_resource type="BTSequence" id="BTSequence_iyt7u"]
 custom_name = "Attack Player Sequence"
-children = [SubResource("BTCheckVar_xtrsg"), SubResource("BTAction_tlh7s"), SubResource("BTCooldown_8b4xb")]
+children = [SubResource("BTCheckVar_xtrsg"), SubResource("BTAction_tlh7s"), SubResource("BTDynamicSelector_yweh8"), SubResource("BTWait_c8fpf")]
 
 [sub_resource type="BTAction" id="BTAction_c8mvy"]
 script = ExtResource("2_i7wmw")

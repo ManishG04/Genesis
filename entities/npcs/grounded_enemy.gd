@@ -1,12 +1,13 @@
 class_name GroundedEnemy
 extends GroundedNPC
 
+
 func _ready() -> void:
 	#attack_area.body_entered.connect(_on_attack_area_body_entered)
 	#attack_area.body_exited.connect(_on_attack_area_body_exited)
 	pass
-		
-func attack():
+
+func attack() -> void:
 	locked_animations = true
 	animated_sprite.play("attack")
 	await animated_sprite.animation_finished

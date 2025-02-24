@@ -965,12 +965,13 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6hr2k"]
+radius = 2.5
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_66axw"]
 
 [node name="Spider" type="CharacterBody3D" node_paths=PackedStringArray("navigation", "animated_sprite")]
 collision_layer = 8
-collision_mask = 15
+collision_mask = 7
 up_direction = Vector3(0, -1, 0)
 script = ExtResource("1_xv2vs")
 navigation = NodePath("NavigationAgent3D")
@@ -985,7 +986,8 @@ shape = SubResource("SphereShape3D_qi05f")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
-pixel_size = 0.025
+offset = Vector2(0, 28.11)
+pixel_size = 0.05
 billboard = 1
 shaded = true
 texture_filter = 0
@@ -996,7 +998,7 @@ frame = 19
 frame_progress = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("SphereShape3D_6hr2k")
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
@@ -1004,7 +1006,9 @@ behavior_tree = ExtResource("8_bwjmc")
 blackboard_plan = SubResource("BlackboardPlan_66axw")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-target_desired_distance = 2.0
+target_desired_distance = 3.0
 avoidance_enabled = true
+radius = 2.5
+neighbor_distance = 20.0
 use_3d_avoidance = true
 debug_enabled = true

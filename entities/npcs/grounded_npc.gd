@@ -1,8 +1,14 @@
 class_name GroundedNPC
 extends NPC
+@export var LEAP_SPEED: float = 10.0
 
 @export var navigation: NavigationAgent3D
 @export_range(0, 10, .01, "suffix:secs") var move_throttle_time: float = 1.0
+
+func leap(dir: Vector3) -> void:
+	direction = dir
+	speed = LEAP_SPEED
+	jump()
 
 func navigate(sprint: bool = false):
 	if is_moving: return

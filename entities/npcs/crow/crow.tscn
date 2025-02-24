@@ -221,7 +221,7 @@ animations = [{
 
 [node name="Crow" type="CharacterBody3D" node_paths=PackedStringArray("animated_sprite")]
 collision_layer = 8
-collision_mask = 15
+collision_mask = 7
 motion_mode = 1
 up_direction = Vector3(0, -1, 0)
 script = ExtResource("1_r5rdy")
