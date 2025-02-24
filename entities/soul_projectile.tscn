@@ -39,7 +39,7 @@ orientation = 0
 
 [node name="SoulProjectile" type="Area3D"]
 collision_layer = 16
-collision_mask = 30
+collision_mask = 62
 script = ExtResource("1_oqnag")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

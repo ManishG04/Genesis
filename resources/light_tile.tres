@@ -5,7 +5,18 @@
 
 [resource]
 albedo_texture = ExtResource("1_7mawj")
+metallic_specular = 0.18
+roughness = 0.29
+emission = Color(1, 1, 1, 1)
 normal_enabled = true
 normal_texture = ExtResource("2_dglcb")
+clearcoat_enabled = true
+clearcoat_roughness = 1.0
+anisotropy = 0.56
+ao_light_affect = 0.22
+detail_blend_mode = 2
 uv1_triplanar = true
 texture_filter = 0
+proximity_fade_distance = 826.09
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 1.0

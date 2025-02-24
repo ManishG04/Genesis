@@ -24,7 +24,7 @@ shader_parameter/size = 1.0
 [node name="Crate" type="RigidBody3D" node_paths=PackedStringArray("meshInstance")]
 disable_mode = 1
 collision_layer = 2
-collision_mask = 15
+collision_mask = 47
 script = ExtResource("1_7cjhx")
 meshInstance = NodePath("MeshInstance3D")
 
@@ -35,3 +35,7 @@ shape = SubResource("BoxShape3D_msmjq")
 material_override = SubResource("StandardMaterial3D_e13q3")
 material_overlay = SubResource("ShaderMaterial_tl5kl")
 mesh = SubResource("BoxMesh_3a4b4")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+radius = 2.99
+height = 2.0

@@ -220,8 +220,8 @@ animations = [{
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_66axw"]
 
 [node name="Crow" type="CharacterBody3D" node_paths=PackedStringArray("animated_sprite")]
-collision_layer = 8
-collision_mask = 7
+collision_layer = 32
+collision_mask = 37
 motion_mode = 1
 up_direction = Vector3(0, -1, 0)
 script = ExtResource("1_r5rdy")
